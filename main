@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Sayed Mostafa - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .skill-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+        .skill-fill {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(to right, #14b8a6, #0f766e);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="bg-teal-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">إبراهيم سيد مصطفى</h1>
+                <h2 class="text-xl md:text-2xl font-semibold text-teal-200">مطور ويب ومصمم جرافيك</h2>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <div class="flex flex-wrap justify-center md:justify-end gap-3">
+                    <a href="mailto:hema3sh@gmail.com" class="bg-teal-600 hover:bg-teal-800 px-4 py-2 rounded-full transition duration-300 flex items-center">
+                        <i class="fas fa-envelope ml-2"></i>
+                        hema3sh@gmail.com
+                    </a>
+                    <a href="tel:01021328718" class="bg-teal-600 hover:bg-teal-800 px-4 py-2 rounded-full transition duration-300 flex items-center">
+                        <i class="fas fa-phone-alt ml-2"></i>
+                        01021328718
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 my-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Right Column -->
+        <div class="md:col-span-1 space-y-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-center mb-4">
+                   
+                </div>
+                <h3 class="text-xl font-bold text-teal-700 mb-4 text-center border-b-2 border-teal-200 pb-2">معلومات شخصية</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-teal-600 ml-3 w-5"></i>
+                        <span>مصر - الأقصر</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-user text-teal-600 ml-3 w-5"></i>
+                        <span>أعزب</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-birthday-cake text-teal-600 ml-3 w-5"></i>
+                        <span>24 سنة</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-shield-alt text-teal-600 ml-3 w-5"></i>
+                        <span>الخدمة العسكرية: مُنهاة</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-teal-700 mb-4 text-center border-b-2 border-teal-200 pb-2">المواقع</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="flex items-center hover:text-teal-700 transition duration-300">
+                            <i class="fab fa-behance text-teal-600 ml-3 w-5"></i>
+                            <span>Behance</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@ibrahimsayed1608" target="_blank" class="flex items-center hover:text-teal-700 transition duration-300">
+                            <i class="fab fa-youtube text-teal-600 ml-3 w-5"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/hema242" target="_blank" class="flex items-center hover:text-teal-700 transition duration-300">
+                            <i class="fab fa-facebook text-teal-600 ml-3 w-5"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          
+          
+          
+          
+          
+ 
+               
+           
+              
+
+          
+              
+              
+              
+              
+              
+           <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
+                    <i class="fas fa-briefcase ml-3"></i>
+                    الخبرات السابقة
+                </h3>
+                
+                <div class="relative border-r-2 border-teal-300 pr-6 mb-8">
+                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-teal-700">مصمم جرافيك ومطور ويب</h4>
+                        <p class="text-gray-700 font-semibold">شركة All Targeting التسويقية (2022 - الوقت الحالي)</p>
+                        <p class="text-gray-600 mt-2">شركة تسويقية تضم عدة علامات تجارية منها Flagedu - ArabPorsa - DamanTrader - CouponsCopy</p>
+                        <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
+                            <li>تصميم وتطوير الهويات البصرية للعلامات التجارية التابعة للشركة</li>
+                            <li>إنشاء المحتوى البصري لمنصات التواصل الاجتماعي والمواد التسويقية</li>
+                         
+                            <li>تصميم واجهات المستخدم (UI) وتحسين تجربة المستخدم (UX) للمواقع والتطبيقات</li>
+                            <li>إنتاج مقاطع فيديو تعليمية وتسويقية للمنصات التعليمية مثل Flagedu</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="relative border-r-2 border-teal-300 pr-6 mb-8">
+                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-teal-700">مصمم جرافيك مستقل</h4>
+                        <p class="text-gray-700 font-semibold">العمل الحر (2020 - 2022)</p>
+                        <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
+                            <li>تصميم شعارات وهويات بصرية للشركات الناشئة والمشاريع الصغيرة</li>
+                            <li>إنتاج محتوى مرئي لمنصات التواصل الاجتماعي والمواد الإعلانية</li>
+                    
+                            <li>إنشاء مواقع ويب بسيطة باستخدام WordPress وHTML/CSS</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="relative border-r-2 border-teal-300 pr-6">
+                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-teal-700">منتج ومحرر فيديو</h4>
+                        <p class="text-gray-700 font-semibold">مشاريع تعليمية وتسويقية (2019 - 2020)</p>
+                        <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
+                            <li>إنتاج وتحرير محتوى فيديوهات تعليمية  </li>
+            
+                             <li>إنشاء رسوم  توضيحية للمفاهيم التعليمية المعقدة</li>
+                          
+                        </ul>
+                    </div>
+                </div>
+                      
+              
+              
+              
+              
+              
+              
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="md:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
+                    <i class="fas fa-user-graduate ml-3"></i>
+                    المؤهلات العلمية
+                </h3>
+                <div class="relative border-r-2 border-teal-300 pr-6">
+                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-teal-700">بكالوريوس كلية التربية النوعية</h4>
+                        <p class="text-gray-600">تخصص: تكنولوجيا التعليم</p>
+                        <p class="text-gray-600">الجامعة: جامعة جنوب الوادي (SVU)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
+                    <i class="fas fa-certificate ml-3"></i>
+                    الشهادات والدورات التدريبية
+                </h3>
+                <ul class="list-disc pr-6 space-y-2">
+                    <li>برمجة الويب باستخدام <strong>PHP & MySQL</strong></li>
+                    <li>أساسيات ومهارات تصميم البوسترات العلمية</li>
+                    <li>شهادة أساسيات تصميم المعلومات</li>
+                    <li>شهادة <strong>ICDL</strong></li>
+                    <li><strong>IT Essentials</strong></li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
+                    <i class="fas fa-code ml-3"></i>
+                    المهارات التقنية
+                </h3>
+                
+                <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات البرمجة وتصميم الويب</h4>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>HTML</span>
+                            <span class="text-sm text-teal-700">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="90"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>CSS</span>
+                            <span class="text-sm text-teal-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="85"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>JavaScript</span>
+                            <span class="text-sm text-teal-700">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="75"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Bootstrap</span>
+                            <span class="text-sm text-teal-700">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="80"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Tailwind CSS</span>
+                            <span class="text-sm text-teal-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="85"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>WordPress</span>
+                            <span class="text-sm text-teal-700">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="80"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات الجرافيك والتصميم</h4>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Adobe Photoshop</span>
+                            <span class="text-sm text-teal-700">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="95"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Adobe Illustrator</span>
+                            <span class="text-sm text-teal-700">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="90"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>GIMP</span>
+                            <span class="text-sm text-teal-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="85"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Edraw Max</span>
+                            <span class="text-sm text-teal-700">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="80"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Canva</span>
+                            <span class="text-sm text-teal-700">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="90"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات المونتاج وصناعة الفيديو</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Vegas Pro</span>
+                            <span class="text-sm text-teal-700">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="90"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>After Effects</span>
+                            <span class="text-sm text-teal-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="85"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Filmora</span>
+                            <span class="text-sm text-teal-700">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="95"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Camtasia</span>
+                            <span class="text-sm text-teal-700">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="85"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>CapCut</span>
+                            <span class="text-sm text-teal-700">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-skill="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="container mx-auto p-4 my-8">
+        <h2 class="text-3xl font-bold text-teal-700 mb-8 text-center">أعمال سابقة</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Portfolio Items -->
+            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662313/flagedu_eyfqrw.png" alt="FlagEdu Project" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">FlagEdu</h3>
+                    <p class="text-gray-600 mb-3">تصاميم متنوعة</p>
+                    <a href="https://drive.google.com/open?id=16Sa4MbbKOU-Bds8hxQ3wxR00SgwgyuKp&usp=drive_copy" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662294/foodtech_e6vdiz.png" alt="Food Tech Project" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">Food Tech</h3>
+                   <p class="text-gray-600 mb-3"> تصاميم سوشيال</p>
+                    <a href="https://drive.google.com/open?id=1yFncAYkFneGA3a_kucUXXm9OHprBvGxZ&usp=drive_copy" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662282/%D8%A7%D8%B1%D8%AA%D8%B1%D8%A7_uc9y61.png" alt="Ultra Project" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">Ultra</h3>
+                   <p class="text-gray-600 mb-3"> تصاميم سوشيال</p>
+                    <a href="https://drive.google.com/drive/folders/1BP6UVTA3_NK_fCUfr3R52wFO8xPQCc2q" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662324/all_targeting_p7nzpe.png" alt="All Targeting Project" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">All Targeting</h3>
+                    <p class="text-gray-600 mb-3">مواد متنوعة</p>
+                    <a href="https://drive.google.com/drive/folders/1dZePe5jc4sYpI661EFEULvFGljzRnthe" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662516/paropa_vk8ehj.png" alt="PARUPA Project" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">PARUPA</h3>
+                    <p class="text-gray-600 mb-3">تصميم هوية بصرية</p>
+                    <a href="https://drive.google.com/drive/folders/1hE4v_XnveHFX0_KI2bomdvUYeP9xv0wC" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
+                </div>
+            </div>
+            
+            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662252/9aeae2209277171.66fcea130e2db_v5r6u9.jpg" alt="HAJEEG Project" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold text-teal-700 mb-2">HAJEEG</h3>
+                    <p class="text-gray-600 mb-3"> تصاميم سوشيال</p>
+                    <a href="https://drive.google.com/drive/folders/1FLb2C1x0aYU8dX-YHF4zaP9EjU1gcE5B" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-teal-800 text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+        
+            <div class="flex justify-center space-x-4">
+                <a href="mailto:hema3sh@gmail.com" class="hover:text-teal-300 transition duration-300">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="hover:text-teal-300 transition duration-300">
+                    <i class="fab fa-behance text-2xl"></i>
+                </a>
+                <a href="https://www.youtube.com/@ibrahimsayed1608" target="_blank" class="hover:text-teal-300 transition duration-300">
+                    <i class="fab fa-youtube text-2xl"></i>
+                </a>
+                <a href="https://www.facebook.com/hema242" target="_blank" class="hover:text-teal-300 transition duration-300">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animate skill bars on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelectorAll('.skill-fill').forEach(function(skill) {
+                    const skillValue = skill.getAttribute('data-skill');
+                    skill.style.width = skillValue + '%';
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
