@@ -3,429 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibrahim Sayed Mostafa - CV</title>
+    <title>إبراهيم سيد مصطفى - بورتفوليو</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        teal: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            200: '#99f6e4',
-                            300: '#5eead4',
-                            400: '#2dd4bf',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
+                        primary: {
+                            50: '#edfcf9',
+                            100: '#d0f8ef',
+                            200: '#a5eee0',
+                            300: '#70e0cc',
+                            400: '#3ecbb3',
+                            500: '#1fb19b',
+                            600: '#16907f',
+                            700: '#157368',
+                            800: '#155c55',
+                            900: '#144c47',
                         },
+                        secondary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#b9e6fe',
+                            300: '#7cd4fd',
+                            400: '#36bffa',
+                            500: '#0da2e7',
+                            600: '#0284c7',
+                            700: '#036ba1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
                     },
                 },
             },
         }
     </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
         body {
             font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
         }
+        
+        .svg-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
         .skill-bar {
             height: 10px;
             border-radius: 5px;
             background-color: #e2e8f0;
             position: relative;
         }
+        
         .skill-fill {
             height: 100%;
             border-radius: 5px;
-            background: linear-gradient(to right, #14b8a6, #0f766e);
+            background: linear-gradient(to right, #3ecbb3, #157368);
             width: 0;
             transition: width 1s ease-in-out;
         }
+        
         .portfolio-item {
             transition: all 0.3s ease;
+            overflow: hidden;
         }
+        
         .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(21, 115, 104, 0.2);
+        }
+        
+        .portfolio-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #157368 0%, #0284c7 100%);
+        }
+
+        .section-heading {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #3ecbb3, #0da2e7);
+            border-radius: 2px;
+        }
+        
+        .animated-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .animated-icon {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wave-top svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        .wave-bottom svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
         }
     </style>
 </head>
 
-<body class="bg-gray-100">
-    <div class="bg-teal-700 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-            <div>
-                <h1 class="text-3xl md:text-4xl font-bold mb-2">إبراهيم سيد مصطفى</h1>
-                <h2 class="text-xl md:text-2xl font-semibold text-teal-200">مطور ويب ومصمم جرافيك</h2>
-            </div>
-            <div class="mt-4 md:mt-0">
-                <div class="flex flex-wrap justify-center md:justify-end gap-3">
-                    <a href="mailto:hema3sh@gmail.com" class="bg-teal-600 hover:bg-teal-800 px-4 py-2 rounded-full transition duration-300 flex items-center">
-                        <i class="fas fa-envelope ml-2"></i>
-                        hema3sh@gmail.com
-                    </a>
-                    <a href="tel:01021328718" class="bg-teal-600 hover:bg-teal-800 px-4 py-2 rounded-full transition duration-300 flex items-center">
-                        <i class="fas fa-phone-alt ml-2"></i>
-                        01021328718
-                    </a>
-                </div>
-            </div>
-        </div>
+<body class="bg-gray-50">
+    <!-- SVG Background Patterns -->
+    <div class="fixed inset-0 z-0 opacity-5">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="3" cy="3" r="1.5" fill="#157368" />
+                </pattern>
+                <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0284c7" stroke-width="0.5" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)" />
+            <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
     </div>
 
-    <div class="container mx-auto p-4 my-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Right Column -->
-        <div class="md:col-span-1 space-y-6">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="flex items-center justify-center mb-4">
-                   
+    <!-- Hero Section with SVG Waves -->
+    <header class="relative overflow-hidden gradient-bg text-white pt-20 pb-32">
+        <!-- Wave SVG at Bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="transform: translateY(1px);">
+          
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-right">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">إبراهيم سيد مصطفى</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-primary-200 mb-6">مطور ويب ومصمم جرافيك</h2>
+                    <p class="text-lg mb-8 max-w-lg mx-auto md:mr-0">مصمم إبداعي ومطور ويب مع خبرة في تصميم الهويات البصرية والواجهات الإلكترونية وإنتاج المحتوى المرئي</p>
+                  
                 </div>
-                <h3 class="text-xl font-bold text-teal-700 mb-4 text-center border-b-2 border-teal-200 pb-2">معلومات شخصية</h3>
-                <ul class="space-y-3">
-                    <li class="flex items-center">
-                        <i class="fas fa-map-marker-alt text-teal-600 ml-3 w-5"></i>
-                        <span>مصر - الأقصر</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-user text-teal-600 ml-3 w-5"></i>
-                        <span>أعزب</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-birthday-cake text-teal-600 ml-3 w-5"></i>
-                        <span>29 سنة</span>
-                    </li>
-                    <li class="flex items-center">
-                        <i class="fas fa-shield-alt text-teal-600 ml-3 w-5"></i>
-                        <span>الخدمة العسكرية: مُنهاة</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-teal-700 mb-4 text-center border-b-2 border-teal-200 pb-2">المواقع</h3>
-                <ul class="space-y-3">
-                    <li>
-                        <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="flex items-center hover:text-teal-700 transition duration-300">
-                            <i class="fab fa-behance text-teal-600 ml-3 w-5"></i>
-                            <span>Behance</span>
+               <div class="md:w-1/2 flex justify-center">
+<!--                     <div class="relative w-64 h-64 rounded-full bg-white/20 p-2 float-animation">
+                        <div class="w-full h-full rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
+                            <span class="text-6xl font-bold text-white">إ س</span>
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-12 h-12 bg-secondary-400 rounded-full"></div>
+                        <div class="absolute -bottom-6 -left-2 w-16 h-16 bg-primary-300 rounded-full"></div>
+                    </div> -->
+                 
+                 
+                   <div class="flex flex-wrap justify-center md:justify-end gap-4">
+                        <a href="mailto:hema3sh@gmail.com" class="bg-white text-primary-700 hover:bg-primary-50 px-6 py-3 rounded-full transition duration-300 flex items-center">
+                            <i class="fas fa-envelope ml-2"></i>
+                            hema3sh@gmail.com
                         </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/@ibrahimsayed1608" target="_blank" class="flex items-center hover:text-teal-700 transition duration-300">
-                            <i class="fab fa-youtube text-teal-600 ml-3 w-5"></i>
-                            <span>YouTube</span>
+                        <a href="tel:01021328718" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary-700 px-6 py-3 rounded-full transition duration-300 flex items-center">
+                            <i class="fas fa-phone-alt ml-2"></i>
+                            01021328718
                         </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/hema242" target="_blank" class="flex items-center hover:text-teal-700 transition duration-300">
-                            <i class="fab fa-facebook text-teal-600 ml-3 w-5"></i>
-                            <span>Facebook</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-          
-          
-          
-          
-          
- 
-               
-           
-              
-
-          
-              
-              
-              
-              
-              
-           <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
-                    <i class="fas fa-briefcase ml-3"></i>
-                    الخبرات السابقة
-                </h3>
-                
-                <div class="relative border-r-2 border-teal-300 pr-6 mb-8">
-                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
-                    <div class="mb-6">
-                        <h4 class="text-xl font-bold text-teal-700">مصمم جرافيك ومطور ويب</h4>
-                        <p class="text-gray-700 font-semibold">شركة All Targeting التسويقية (2022 - الوقت الحالي)</p>
-                        <p class="text-gray-600 mt-2">شركة تسويقية تضم عدة علامات تجارية منها Flagedu - ArabPorsa - DamanTrader - CouponsCopy</p>
-                        <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
-                            <li>تصميم وتطوير الهويات البصرية للعلامات التجارية التابعة للشركة</li>
-                            <li>إنشاء المحتوى البصري لمنصات التواصل الاجتماعي والمواد التسويقية</li>
-                         
-                            <li>تصميم واجهات المستخدم (UI) وتحسين تجربة المستخدم (UX) للمواقع والتطبيقات</li>
-                            <li>إنتاج مقاطع فيديو تعليمية وتسويقية للمنصات التعليمية مثل Flagedu</li>
-                        </ul>
                     </div>
-                </div>
-                
-                <div class="relative border-r-2 border-teal-300 pr-6 mb-8">
-                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
-                    <div class="mb-6">
-                        <h4 class="text-xl font-bold text-teal-700">مصمم جرافيك مستقل</h4>
-                        <p class="text-gray-700 font-semibold">العمل الحر (2020 - 2022)</p>
-                        <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
-                            <li>تصميم شعارات وهويات بصرية للشركات الناشئة والمشاريع الصغيرة</li>
-                            <li>إنتاج محتوى مرئي لمنصات التواصل الاجتماعي والمواد الإعلانية</li>
+                </div>  
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content with SVG Accents -->
+    <div class="container mx-auto p-4 -mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Right Column -->
+            <div class="md:col-span-1 space-y-6">
+                <!-- Personal Information Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+                    <svg class="absolute top-8 left-8 w-32 h-32 text-gray-100 transform -rotate-12 opacity-70 transition-all duration-300 group-hover:scale-125" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" fill="currentColor"/>
+                        <path d="M12 13C7.58172 13 4 16.5817 4 21H20C20 16.5817 16.4183 13 12 13Z" fill="currentColor"/>
+                    </svg>
                     
-                            <li>إنشاء مواقع ويب بسيطة باستخدام WordPress وHTML/CSS</li>
-                        </ul>
-                    </div>
+                    <h3 class="text-xl font-bold text-primary-700 mb-6 section-heading">معلومات شخصية</h3>
+                    <ul class="space-y-4 relative z-10">
+                        <li class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
+                                <i class="fas fa-map-marker-alt text-primary-600"></i>
+                            </div>
+                            <span>مصر - الأقصر</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
+                                <i class="fas fa-user text-primary-600"></i>
+                            </div>
+                            <span>أعزب</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
+                                <i class="fas fa-birthday-cake text-primary-600"></i>
+                            </div>
+                            <span>29 سنة</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
+                                <i class="fas fa-shield-alt text-primary-600"></i>
+                            </div>
+                            <span>الخدمة العسكرية: مُنهاة</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
+                    <svg class="absolute top-8 left-8 w-32 h-32 text-gray-100 transform rotate-12 opacity-70 transition-all duration-300 group-hover:scale-125" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    
+                    <h3 class="text-xl font-bold text-primary-700 mb-6 section-heading">المواقع</h3>
+                    <ul class="space-y-4 relative z-10">
+                        <li>
+                            <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition duration-300">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center ml-3">
+                                    <i class="fab fa-behance text-blue-600"></i>
+                                </div>
+                                <span class="font-medium">Behance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@ibrahimsayed1608" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition duration-300">
+                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center ml-3">
+                                    <i class="fab fa-youtube text-red-600"></i>
+                                </div>
+                                <span class="font-medium">YouTube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/hema242" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition duration-300">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center ml-3">
+                                    <i class="fab fa-facebook text-blue-600"></i>
+                                </div>
+                                <span class="font-medium">Facebook</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="relative border-r-2 border-teal-300 pr-6">
-                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
-                    <div class="mb-6">
-                        <h4 class="text-xl font-bold text-teal-700">منتج ومحرر فيديو</h4>
-                        <p class="text-gray-700 font-semibold">مشاريع تعليمية وتسويقية (2019 - 2020)</p>
-                        <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
-                            <li>إنتاج وتحرير محتوى فيديوهات تعليمية  </li>
-            
-                             <li>إنشاء رسوم  توضيحية للمفاهيم التعليمية المعقدة</li>
-                          
-                        </ul>
+                <!-- Work Experience Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform -rotate-6 opacity-70 transition-all duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" fill="currentColor"/>
+                        <path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    
+                    <h3 class="text-2xl font-bold text-primary-700 mb-6 section-heading relative z-10">الخبرات السابقة</h3>
+                    
+                    <div class="relative border-r-2 border-primary-300 pr-6 mb-8 z-10">
+                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-primary-700">مصمم جرافيك ومطور ويب</h4>
+                            <p class="text-gray-700 font-semibold">شركة All Targeting التسويقية (2022 - الوقت الحالي)</p>
+                            <p class="text-gray-600 mt-2">شركة تسويقية تضم عدة علامات تجارية منها Flagedu - ArabPorsa - DamanTrader - CouponsCopy</p>
+                            <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
+                                <li>تصميم وتطوير الهويات البصرية للعلامات التجارية التابعة للشركة</li>
+                                <li>إنشاء المحتوى البصري لمنصات التواصل الاجتماعي والمواد التسويقية</li>
+                                <li>تصميم واجهات المستخدم (UI) وتحسين تجربة المستخدم (UX) للمواقع والتطبيقات</li>
+                                <li>إنتاج مقاطع فيديو تعليمية وتسويقية للمنصات التعليمية مثل Flagedu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="relative border-r-2 border-primary-300 pr-6 mb-8 z-10">
+                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-primary-700">مصمم جرافيك مستقل</h4>
+                            <p class="text-gray-700 font-semibold">العمل الحر (2020 - 2022)</p>
+                            <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
+                                <li>تصميم شعارات وهويات بصرية للشركات الناشئة والمشاريع الصغيرة</li>
+                                <li>إنتاج محتوى مرئي لمنصات التواصل الاجتماعي والمواد الإعلانية</li>
+                                <li>إنشاء مواقع ويب بسيطة باستخدام WordPress وHTML/CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="relative border-r-2 border-primary-300 pr-6 z-10">
+                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-primary-700">منتج ومحرر فيديو</h4>
+                            <p class="text-gray-700 font-semibold">مشاريع تعليمية وتسويقية (2019 - 2020)</p>
+                            <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
+                                <li>إنتاج وتحرير محتوى فيديوهات تعليمية</li>
+                                <li>إنشاء رسوم توضيحية للمفاهيم التعليمية المعقدة</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                      
-              
-              
-              
-              
-              
-              
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
+            </div>
+
+            <!-- Main Content -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Education Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
+                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform rotate-12 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                    <h3 class="text-2xl font-bold text-primary-700 mb-6 section-heading relative z-10">المؤهلات العلمية</h3>
+                    <div class="relative border-r-2 border-primary-300 pr-6 z-10">
+                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
+                        <div class="mb-6">
+                            <h4 class="text-xl font-bold text-primary-700">بكالوريوس كلية التربية النوعية</h4>
+                            <p class="text-gray-600">تخصص: تكنولوجيا التعليم</p>
+                            <p class="text-gray-600">الجامعة: جامعة جنوب الوادي (SVU)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificates Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform -rotate-12 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 6H4V18H20V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" fill="currentColor"/>
+                        <path d="M18 14C18 11.7909 15.3137 10 12 10C8.68629 10 6 11.7909 6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                    <h3 class="text-2xl font-bold text-primary-700 mb-6 section-heading relative z-10">الشهادات والدورات التدريبية</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
+                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
+                                <i class="fas fa-code text-primary-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">برمجة الويب</h4>
+                            <p class="text-gray-600">PHP & MySQL</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
+                                <i class="fas fa-desktop text-primary-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">ICDL</h4>
+                            <p class="text-gray-600">الرخصة الدولية لقيادة الحاسب</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
+                                <i class="fas fa-paint-brush text-primary-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">تصميم البوسترات العلمية</h4>
+                            <p class="text-gray-600">أساسيات ومهارات</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
+                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
+                                <i class="fas fa-network-wired text-primary-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">IT Essentials</h4>
+                            <p class="text-gray-600">أساسيات تكنولوجيا المعلومات</p>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Skills Card -->
+<div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+    <!-- Gradient header bar -->
+    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
+    
+    <!-- Background icon -->
+    <svg class="absolute top-8 right-8 w-40 h-40 text-gray-100 transform rotate-6 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <path d="M14.2426 5.75736L10 10L11.7574 11.7574L16 7.51472L14.2426 5.75736Z" fill="currentColor"/>
+        <path d="M16.8787 14.1213L19.0711 11.9289L17.3137 10.1716L15.1213 12.364L16.8787 14.1213Z" fill="currentColor"/>
+        <path d="M8.8787 16.1213L14.1213 10.8787L12.364 9.12132L7.12132 14.364L8.8787 16.1213Z" fill="currentColor"/>
+        <path d="M5.63603 18.364L8.8787 15.1213L7.12132 13.364L3.87868 16.6066L5.63603 18.364Z" fill="currentColor"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.87868 11.1213L11.1213 2.87868C11.7071 2.29289 12.2929 2.29289 12.8787 2.87868L21.1213 11.1213C21.7071 11.7071 21.7071 12.2929 21.1213 12.8787L12.8787 21.1213C12.2929 21.7071 11.7071 21.7071 11.1213 21.1213L2.87868 12.8787C2.29289 12.2929 2.29289 11.7071 2.87868 11.1213ZM11.1213 4.29289L4.29289 11.1213L4.29289 12.8787L11.1213 19.7071C11.7071 20.2929 12.2929 20.2929 12.8787 19.7071L19.7071 12.8787C20.2929 12.2929 20.2929 11.7071 19.7071 11.1213L12.8787 4.29289C12.2929 3.7071 11.7071 3.7071 11.1213 4.29289Z" fill="currentColor"/>
+    </svg>
+    
+    <!-- Skills Content -->
+    <div class="relative z-10">
+        <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
+            <i class="fas fa-code mr-2"></i>
+            المهارات التقنية
+        </h3>
+        
+        <!-- Programming Skills -->
+        <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات البرمجة وتصميم الويب</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>HTML</span>
+                    <span class="text-sm text-teal-700">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>CSS</span>
+                    <span class="text-sm text-teal-700">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>JavaScript</span>
+                    <span class="text-sm text-teal-700">75%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 75%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Bootstrap</span>
+                    <span class="text-sm text-teal-700">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Tailwind CSS</span>
+                    <span class="text-sm text-teal-700">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>WordPress</span>
+                    <span class="text-sm text-teal-700">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
+                </div>
             </div>
         </div>
-
-        <!-- Main Content -->
-        <div class="md:col-span-2 space-y-6">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
-                    <i class="fas fa-user-graduate ml-3"></i>
-                    المؤهلات العلمية
-                </h3>
-                <div class="relative border-r-2 border-teal-300 pr-6">
-                    <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-teal-500"></div>
-                    <div class="mb-6">
-                        <h4 class="text-xl font-bold text-teal-700">بكالوريوس كلية التربية النوعية</h4>
-                        <p class="text-gray-600">تخصص: تكنولوجيا التعليم</p>
-                        <p class="text-gray-600">الجامعة: جامعة جنوب الوادي (SVU)</p>
-                    </div>
+        
+        <!-- Graphic Design Skills -->
+        <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات الجرافيك والتصميم</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Adobe Photoshop</span>
+                    <span class="text-sm text-teal-700">95%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
                 </div>
             </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
-                    <i class="fas fa-certificate ml-3"></i>
-                    الشهادات والدورات التدريبية
-                </h3>
-                <ul class="list-disc pr-6 space-y-2">
-                    <li>برمجة الويب باستخدام <strong>PHP & MySQL</strong></li>
-                    <li>أساسيات ومهارات تصميم البوسترات العلمية</li>
-                    <li>شهادة أساسيات تصميم المعلومات</li>
-                    <li>شهادة <strong>ICDL</strong></li>
-                    <li><strong>IT Essentials</strong></li>
-                </ul>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Adobe Illustrator</span>
+                    <span class="text-sm text-teal-700">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
+                </div>
             </div>
-
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
-                    <i class="fas fa-code ml-3"></i>
-                    المهارات التقنية
-                </h3>
-                
-                <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات البرمجة وتصميم الويب</h4>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>HTML</span>
-                            <span class="text-sm text-teal-700">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="90"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>CSS</span>
-                            <span class="text-sm text-teal-700">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="85"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>JavaScript</span>
-                            <span class="text-sm text-teal-700">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="75"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Bootstrap</span>
-                            <span class="text-sm text-teal-700">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="80"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Tailwind CSS</span>
-                            <span class="text-sm text-teal-700">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="85"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>WordPress</span>
-                            <span class="text-sm text-teal-700">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="80"></div>
-                        </div>
-                    </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>GIMP</span>
+                    <span class="text-sm text-teal-700">85%</span>
                 </div>
-                
-                <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات الجرافيك والتصميم</h4>
-                <div class="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Adobe Photoshop</span>
-                            <span class="text-sm text-teal-700">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="95"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Adobe Illustrator</span>
-                            <span class="text-sm text-teal-700">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="90"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>GIMP</span>
-                            <span class="text-sm text-teal-700">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="85"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Edraw Max</span>
-                            <span class="text-sm text-teal-700">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="80"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Canva</span>
-                            <span class="text-sm text-teal-700">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="90"></div>
-                        </div>
-                    </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
                 </div>
-                
-                <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات المونتاج وصناعة الفيديو</h4>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Vegas Pro</span>
-                            <span class="text-sm text-teal-700">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="90"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>After Effects</span>
-                            <span class="text-sm text-teal-700">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="85"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Filmora</span>
-                            <span class="text-sm text-teal-700">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="95"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>Camtasia</span>
-                            <span class="text-sm text-teal-700">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="85"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span>CapCut</span>
-                            <span class="text-sm text-teal-700">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" data-skill="90"></div>
-                        </div>
-                    </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Edraw Max</span>
+                    <span class="text-sm text-teal-700">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Canva</span>
+                    <span class="text-sm text-teal-700">95%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video Editing Skills -->
+        <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات المونتاج وصناعة الفيديو</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Vegas Pro</span>
+                    <span class="text-sm text-teal-700">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>After Effects</span>
+                    <span class="text-sm text-teal-700">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Filmora</span>
+                    <span class="text-sm text-teal-700">95%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>Camtasia</span>
+                    <span class="text-sm text-teal-700">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1">
+                    <span>CapCut</span>
+                    <span class="text-sm text-teal-700">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+              
 
-    <!-- Portfolio Section -->
-    <div class="container mx-auto p-4 my-8">
+                <!-- Portfolio Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform -rotate-6 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 5H20V19H4V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 5L12 13L20 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 19L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 19L14 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                     <!-- Portfolio Section -->
+ 
         <h2 class="text-3xl font-bold text-teal-700 mb-8 text-center">أعمال سابقة</h2>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -511,39 +676,109 @@
          
           
           
-        </div>
+       
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-teal-800 text-white py-6 mt-8">
-        <div class="container mx-auto px-4 text-center">
+    </div>
+
+              
+              
+        </div>    </div>    </div>       
+              
+              
+              
+              
+              
+              
+   <!-- Contact Section -->
+    <section class="gradient-bg text-white py-16 mt-16 relative">
+        <!-- Wave SVG at Top -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden" style="transform: translateY(-99%);">
+           
+          
+        </div>
         
-            <div class="flex justify-center space-x-4">
-                <a href="mailto:hema3sh@gmail.com" class="hover:text-teal-300 transition duration-300">
-                    <i class="fas fa-envelope text-2xl"></i>
-                </a>
-                <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="hover:text-teal-300 transition duration-300">
-                    <i class="fab fa-behance text-2xl"></i>
-                </a>
-                <a href="https://www.youtube.com/@ibrahimsayed1608" target="_blank" class="hover:text-teal-300 transition duration-300">
-                    <i class="fab fa-youtube text-2xl"></i>
-                </a>
-                <a href="https://www.facebook.com/hema242" target="_blank" class="hover:text-teal-300 transition duration-300">
-                    <i class="fab fa-facebook text-2xl"></i>
-                </a>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center">تواصل معي</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">البريد الإلكتروني</h3>
+                    <p><a href="mailto:hema3sh@gmail.com" class="text-white hover:text-gray-200 transition-colors">hema3sh@gmail.com</a></p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">الهاتف</h3>
+                    <p><a href="tel:+201021328718" class="text-white hover:text-gray-200 transition-colors">01021328718</a></p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">العنوان</h3>
+                    <p>مصر - الأقصر</p>
+                </div>
+            </div>
+            
+       
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-right mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">إبراهيم سيد مصطفى</h2>
+                    <p class="text-gray-400">مصمم جرافيك ومطور ويب</p>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <a href="https://www.facebook.com/hema242" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.behance.net/Ibrahimtec" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@ibrahimsayed1608" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center">
+                <p class="text-gray-400">&copy; <span id="currentYear">2025</span> جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Animate skill bars on page load
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Animate skill bars on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.querySelectorAll('.skill-fill').forEach(function(skill) {
-                    const skillValue = skill.getAttribute('data-skill');
-                    skill.style.width = skillValue + '%';
+            let skillFills = document.querySelectorAll('.skill-fill');
+            
+            function animateSkills() {
+                skillFills.forEach(fill => {
+                    const targetWidth = fill.parentElement.getAttribute('data-width') || fill.style.width;
+                    fill.style.width = targetWidth;
                 });
-            }, 300);
+            }
+            
+            // Initial animation
+            setTimeout(animateSkills, 500);
+            
+            // Animate on scroll
+            window.addEventListener('scroll', function() {
+                let scrolled = window.scrollY;
+                
+                if (scrolled > 300) {
+                    animateSkills();
+                }
+            });
         });
     </script>
 </body>
