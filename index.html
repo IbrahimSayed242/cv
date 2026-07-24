@@ -1,785 +1,1638 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إبراهيم سيد مصطفى - بورتفوليو</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#edfcf9',
-                            100: '#d0f8ef',
-                            200: '#a5eee0',
-                            300: '#70e0cc',
-                            400: '#3ecbb3',
-                            500: '#1fb19b',
-                            600: '#16907f',
-                            700: '#157368',
-                            800: '#155c55',
-                            900: '#144c47',
-                        },
-                        secondary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#b9e6fe',
-                            300: '#7cd4fd',
-                            400: '#36bffa',
-                            500: '#0da2e7',
-                            600: '#0284c7',
-                            700: '#036ba1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        }
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
-        body {
-            font-family: 'Tajawal', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .svg-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.1;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            border-radius: 5px;
-            background-color: #e2e8f0;
-            position: relative;
-        }
-        
-        .skill-fill {
-            height: 100%;
-            border-radius: 5px;
-            background: linear-gradient(to right, #3ecbb3, #157368);
-            width: 0;
-            transition: width 1s ease-in-out;
-        }
-        
-        .portfolio-item {
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(21, 115, 104, 0.2);
-        }
-        
-        .portfolio-item img {
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #157368 0%, #0284c7 100%);
-        }
+    <title>Ibrahim Sayed - Portfolio</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        .section-heading {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-heading:after {
-            content: '';
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+
+:root {
+    --hue-color: 242;
+
+    --skin-color: hsl(342, 92%, 46%);
+    --mirage-color: hsl(210, 10%, 23%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+
+    --body-font: 'Poppins', sans-serif;
+    --signature-font: 'Turret Road', sans-serif;
+
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    --font-medium: 500;
+    --font-bold: 600;
+
+    --mb025: .25rem;
+    --mb05: .5rem;
+    --mb075: .75rem;
+    --mb1: 1rem;
+    --mb15: 1.5rem;
+    --mb2: 2rem;
+    --mb25: 2.5rem;
+    --mb3: 3rem;
+
+    --z-fixed: 10;
+    --z-modal: 100;
+
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body, button, input { font-family: var(--body-font); font-size: var(--normal-font-size); }
+    body { background-color: var(--body-color); color: var(--text-color); }
+h1, h2, h3 { color: var(--title-color); font-weight: var(--font-bold); }
+ul { list-style: none; }
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }
+button { cursor: pointer; }
+    button, input { border: none; outline: none; }
+.container { max-width: 1250px; margin-left: auto; margin-right: auto; }
+.grid { display: grid; }
+.button { 
+    display: inline-flex; 
+    align-items: center; 
+    column-gap: .5rem; 
+    background-color: var(--skin-color); 
+    color: var(--title-color); 
+    padding: 0.75rem 1.4rem; 
+    border-radius: .25rem; 
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;
+    transition: .4s;
+}
+    .button::after { 
+        position: absolute; 
+        content: ''; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: var(--mirage-color); 
+        z-index: -1;
+        transform-origin: center; 
+        transform: scale(0); 
+        border-radius: .25rem;
+        transition: .3s; 
+    }
+        .button:hover::after { transform: scale(1); }
+.section { padding: 6.5rem 0 2rem; }
+.section-title { text-align: center; font-size: var(--h1-font-size); margin-bottom: var(--mb3); }
+    .section-title::before { content: attr(data-heading); display: block; font-size: var(--normal-font-size); font-weight: var(--font-medium); color: var(--skin-color); }
+::-webkit-scrollbar { width: 0.6rem; background-color: var(--scroll-box-color); border-radius: .5rem; }
+::-webkit-scrollbar-thumb { background-color: var(--scroll-thumb-color); border-radius: .5rem; }
+
+/* Sidebar */
+
+.sidebar { position: fixed; width: 100px; height: 100vh; background-color: var(--body-color); border-right: 1px solid var(--box-color); }
+.nav-logo { position: absolute; left: 0; right: 0; top: 1.8rem; width: 40px; height: 40px; border-radius: 50%; background-color: var(--skin-color); text-align: center; margin: auto; }
+.nav-logo-text { font-size: 1.125rem; color: var(--title-color); font-weight: var(--font-bold); line-height: 40px; }
+.nav-menu { position: fixed; transform: rotate(-90deg) translateX(-100%); transform-origin: left top; width: 100vh; }
+.menu { display: flex; }
+.nav-list { display: flex; flex-direction: row-reverse; margin: -2px auto 0 auto; }
+.nav-link { float: right; height: 100%; line-height: 100px; padding: 0 1rem; color: var(--title-color); font-weight: var(--font-medium); position: relative; transition: .4s; }
+.nav-toggle {
+    height: 32px;
+    width: 36px;
+    cursor: pointer;
+    position: fixed;
+    right: 1.5rem;
+    top: 2rem;
+    font-size: 1.2rem;
+    border-radius: .25rem;
+    background-color: var(--skin-color);
+    color: var(--title-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.nav-close { font-size: 1.5rem; position: absolute; top: 1rem; right: 1.25rem; cursor: pointer; display: none; }
+    .nav-link.active-link, .nav-link:hover { color: var(--skin-color); }
+        .nav-link.active-link::after, .nav-link:hover::after {
             position: absolute;
-            bottom: -10px;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--skin-color);
+            border-radius: 50%;
+            bottom: 1.8rem;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(to right, #3ecbb3, #0da2e7);
-            border-radius: 2px;
+            margin: auto;
         }
+.btn-share { position: absolute; bottom: 1.8rem; left: 0; right: 0; text-align: center; cursor: pointer; }
+.social-share { font-size: 1.5rem; }
+
+/* Main - Home */
+
+.main { margin-left: 100px; }
+.home { background: linear-gradient(hsla(210, 10%, 5%, 0.85), hsla(210, 10%, 5%, 0.85)), url('https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1600'); background-size: cover; background-position: center center; height: 100vh; }
+.home-container { position: relative; height: 100%; align-items: center; }
+.home-social { position: absolute; top: 1.8rem; left: 0; display: flex; align-items: center; column-gap: 3.5rem; }
+.home-social-follow { font-weight: var(--font-medium); position: relative; }
+    .home-social-follow::after { content: ''; position: absolute; width: 1rem; height: 2px; background-color: var(--text-color); right: -45%; top: 50%; }
+.home-social-links { display: inline-flex; column-gap: 1rem; }
+.home-social-link { font-size: 1.08rem; color: var(--text-color); transition: .4s; }
+    .home-social-link:hover { transform: translateY(.25rem); }
+.home-img {   border-radius: 25px; display: block; width:300px; max-width: 100%; height: auto; margin: 0 auto; }
+.home-title { font-size: var(--biggest-font-size);  margin-top:50px}
+.home-subtitle { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb075); }
+.home-description { max-width: 450px; margin-bottom: var(--mb2); }
+.my-info { display: flex; column-gap: 1.8rem; position: absolute; left: 0; bottom: 1.8rem; }
+.info-item { display: flex; align-items: center; }
+.info-title, .info-subtitle { font-size: var(--small-font-size); }
+    .info-title { font-weight: var(--font-medium); }
+.info-icon { font-size: 1.8rem; color: var(--skin-color); margin-right: var(--mb075); }
+
+/* Main - About */
+
+.about-container { grid-template-columns: repeat(2, 1fr); column-gap: 4rem; align-items: center; }
+.about-img { width: 480px; border-radius: .75rem; justify-self: center; }
+.about-heading { font-size: var(--h3-font-size); margin-bottom: var(--mb075); }
+.about-description { text-align: justify; padding-right: 6rem; margin-bottom: var(--mb2); }
+.about-info { display: grid; grid-template-columns: repeat(3, 140px); column-gap: .5rem; margin-bottom: var(--mb3); }
+.about-box { text-align: center; border-radius: .25rem; padding: 1rem 1.25rem; background-color: var(--box-color); }
+.about-icon { font-size: 1.5rem; color: var(--skin-color); margin-bottom: var(--mb075); }
+.about-title { font-size: var(--small-font-size); }
+.about-subtitle { font-size: var(--small-font-size); }
+
+/* Main - Qualification */
+
+.qualification-container { grid-template-columns: repeat(2 ,340px); column-gap: 3rem; justify-content: center; }
+.qualification-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb2); }
+.timeline-item { position: relative; margin-bottom: var(--mb25); padding-left: 3rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before { content: ''; width: 1px; position: absolute; left: 0.48rem; top: 0; height: 100%; background-color: var(--skin-color); }
+.circle-dot { position: absolute; left: 0; top: 0; height: 1rem; width: 1rem; border: 2px solid var(--skin-color); border-radius: 50%; background-color: var(--skin-color); transition: .4s; }
+    .timeline-item:hover .circle-dot { background-color: var(--body-color); }
+.timeline-title { font-size: var(--normal-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb025); }
+.timeline-text { font-size: var(--smaller-font-size); margin-bottom: var(--mb1); }
+.timeline-date { display: flex; align-items: center; column-gap: .4rem; font-size: var(--normal-font-size); color: var(--skin-color); }
+
+/* Main - Skills */ 
+
+.skills-container { grid-template-columns: 360px 320px; column-gap: 3rem; justify-content: center; }
+.skills-header { display: flex; align-items: center; cursor: pointer; }
+    .skills-header:not(:last-child) { margin-bottom: var(--mb25); }
+.skills-icon, .skills-arrow { font-size: 2rem; color: var(--skin-color); }
+    .skills-icon { margin-right: var(--mb075); }
+    .skills-arrow { margin-left: auto; }
+        .skills-active .skills-arrow { transform: rotate(-90deg); transition: .4s; }
+.skills-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); }
+.skills-subtitle { font-size: var(--small-font-size); }
+.skills-list { row-gap: 1.8rem; }
+.skills-titles { display: flex; justify-content: space-between; margin-bottom: var(--mb05); }
+.skills-name { font-size: var(--normal-font-size); font-weight: var(--font-medium); }
+.skills-bar, .skills-percentage { height: 5px; border-radius: .25rem; }
+    .skills-bar { background-color: var(--box-color); }
+    .skills-percentage { display: block; background-color: var(--skin-color); }
+.skills [data-content] { display: none; }
+    .skills-active[data-content] { display: block; }
+
+/* Main - Work */ 
+
+.work-container { grid-template-columns: repeat(3, 330px); gap: 1.8rem; justify-content: center; padding-top: 1rem; }
+.work-filters { display: flex; justify-content: center; align-items: center; column-gap: .75rem; margin-bottom: 2rem; flex-wrap: wrap; row-gap: .75rem; }
+.work-item { cursor: pointer; color: var(--title-color); padding: 0.25rem .75rem; font-weight: var(--font-medium); border-radius: .5rem; }
+.work-card { background-color: var(--box-color); padding: 1.25rem; border-radius: .5rem; }
+.portfolio-item-details { display: none; }
+.work-img { border-radius: .5rem; margin-bottom: var(--mb1); height: 200px; object-fit: cover; width: 100%; }
+.work-title { font-size: var(--normal-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb05); }
+.work-button { color: var(--skin-color); font-size: var(--small-font-size); display: flex; align-items: center; column-gap: .25rem; cursor: pointer; }
+.work-button-icon { font-size: 1rem; transition: .4s; }
+    .work-button:hover .work-button-icon { transform: translateX(.25rem); }
+.active-work { background-color: var(--skin-color); color: var(--title-color); }
+
+.portfolio-popup { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, .5); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 1rem;
+    opacity: 0;
+    visibility: hidden; 
+    z-index: var(--z-modal); 
+    transition: .4s; 
+}
+.portfolio-popup.open { opacity: 1; visibility: visible; }
+.portfolio-popup-inner { background-color: var(--box-color); width: 900px; border-radius: .5rem; padding: 2.5rem; position: relative; }
+.portfolio-popup-content { grid-template-columns: repeat(2, 1fr); align-items: center; column-gap: 3rem; }
+.portfolio-popup-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; color: var(--skin-color); cursor: pointer; }
+.portfolio-popup-img { border-radius: .5rem; }
+.portfolio-popup-subtitle { font-size: var(--smaller-font-size); margin-bottom: var(--mb025); }
+.details-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb1); }
+.details-description { font-size: var(--small-font-size); margin-bottom: var(--mb2); }
+.details-info li { margin-bottom: var(--mb075); text-transform: capitalize; font-size: var(--small-font-size); }
+    .details-info li:last-child { margin-bottom: 0; }
+    .details-info li span { font-weight: normal; }
+    .details-info li a { text-transform: lowercase; color: var(--skin-color); }
+
+/* Main - Services */ 
+
+.services-container { grid-template-columns: repeat(3, 250px); justify-content: center; column-gap: 1.8rem; }
+.services-content { position: relative; background-color: var(--box-color); padding: 6rem 0 2rem 2.5rem; border-radius: .25rem; }
+.services-icon { display: block; font-size: 1.8rem; color: var(--skin-color); margin-bottom: var(--mb1); }
+.services-title { font-size: var(--h3-font-size); margin-bottom: var(--mb1); font-weight: var(--font-medium); }
+.services-button { color: var(--skin-color); font-size: var(--small-font-size); display: flex; align-items: center; column-gap: .25rem; cursor: pointer; }
+.services-button-icon { font-size: 1rem; transition: .4s; }
+    .services-button:hover .services-button-icon { transform: translateX(.25rem); }
+.services-modal {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, .5); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden; 
+    transition: .4s;
+}
+.active-modal { opacity: 1; visibility: visible; }
+.services-modal-content { width: 500px; position: relative; background-color: var(--box-color); padding: 4.5rem 2.5rem 2.5rem; border-radius: .5rem; }
+.services-modal-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; color: var(--skin-color); cursor: pointer; }
+.services-modal-title, .services-modal-description { text-align: center; }
+    .services-modal-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb1); }
+    .services-modal-description { font-size: var(--small-font-size); padding: 0 3.5rem; margin-bottom: var(--mb2); }
+.services-modal-services { row-gap: var(--mb075); }
+.services-modal-service { display: flex; align-items: center; column-gap: .5rem; }
+.services-modal-icon { color: var(--skin-color); font-size: 1.1rem; }
+.services-modal-info { font-size: var(--small-font-size); }
+
+/* Main - Contact */
+
+.contact-container { grid-template-columns: 300px 340px; column-gap: 3rem; justify-content: center; align-items: center; }
+.contact-info { display: grid; row-gap: 1rem; }
+.contact-card { background-color: var(--box-color); padding: 1rem; border-radius: .5rem; text-align: center; }
+.contact-card-icon { font-size: 1.8rem; color: var(--title-color); margin-bottom: var(--mb025); }
+.contact-card-title, .contact-card-data { font-size: var(--small-font-size); }
+    .contact-card-title { font-weight: var(--font-medium); }
+    .contact-card-data { display: block; margin-bottom: var(--mb075); }
+.contact-button { color: var(--skin-color); font-size: var(--small-font-size); display: flex; align-items: center; justify-content: center; column-gap: .25rem; cursor: pointer; }
+.contact-button-icon { font-size: 1rem; transition: .4s; }
+    .contact-button:hover .contact-button-icon { transform: translateX(.25rem); }
+.input-container { position: relative; margin-top: 1rem; margin-bottom: 1.9rem; }
+.input { 
+    width: 100%; 
+    border: 2px solid var(--text-color); 
+    background-color: transparent; 
+    padding: 0.6rem 1.2rem; 
+    color: var(--title-color); 
+    font-weight: var(--font-medium); 
+    font-size: var(--normal-font-size); 
+    letter-spacing: .5px; 
+    border-radius: .5rem;
+    outline: none; 
+    transition: .4s; 
+}
+textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem; resize: none; font-family: var(--body-font); }
+    .input-container label {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        padding: 0 .4rem;
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: var(--font-medium);
+        pointer-events: none;
+        z-index: 15;
+        transition: .5s;
+    }
         
-        .animated-icon {
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover .animated-icon {
-            transform: translateY(-5px);
-        }
-        
-        .wave-top svg {
+        .input-container.textarea label { top: 1rem; transform: translateY(0); }
+    .input-container span { 
+        position: absolute; 
+        top: 0; 
+        left: 25px; 
+        transform: translateY(-50%); 
+        font-size: var(--small-font-size); 
+        padding: 0 .4rem; 
+        pointer-events: none; 
+        z-index: var(--z-fixed); 
+        color: transparent; 
+    }
+        .input-container span::before, .input-container span::after { 
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            width: 10%;
+            opacity: 0;
+            height: 5px;
+            background-color: var(--body-color);
+            top: 50%;
+            transform: translateY(-50%);
+            transition: .4s;
         }
-        
-        .wave-bottom svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .float-animation {
-            animation: float 4s ease-in-out infinite;
-        }
+            .input-container span::before { left: 50%; }
+            .input-container span::after { right: 50%; }
+            .input-container.focus label { top: 0; transform: translateY(-50%); left: 25px; font-size: var(--smaller-font-size); }
+                .input-container.focus span::before, .input-container.focus span::after  { width: 50%; opacity: 1; }
+
+/* Footer */
+
+.footer { padding-top: 2rem; }
+.footer-container { grid-template-columns: repeat(3, 1fr); column-gap: 1.6rem; }
+.footer-bg { background-color: var(--box-color); padding: 3rem 0 3.5rem; }
+.footer-title { font-size: var(--h1-font-size); margin-bottom: var(--mb025); }    
+.footer-subtitle { font-size: var(--small-font-size); }
+.footer-links { display: flex; justify-self: center; column-gap: 2rem; }
+    .footer-links:hover { color: var(--skin-color); }
+.footer-socials { justify-self: flex-end; }
+.footer-social { font-size: 1.25rem; margin-right: var(--mb15); }
+    .footer-social:hover { color: var(--skin-color); }
+.footer-copy { font-size: var(--smaller-font-size); text-align: center; margin-top: 4.5rem; }
+    .footer-copy a { font-family: var(--signature-font); } 
+        .footer-copy a:hover { color: var(--skin-color); }
+    .footer-title, .footer-subtitle, .footer-links, .footer-social, .footer-copy a { color: var(--title-color); }
+
+/* Media Queries */
+
+@media screen and (max-width: 1408px) {
+    .container { margin-left: var(--mb25); margin-right: var(--mb25); }
+}
+
+@media screen and (max-width: 1216px) {
+    .about-container { column-gap: 2.5rem; }
+    .about-description { padding-right: 0; }
+    .work-container { grid-template-columns: repeat(2, 330px); gap: 3rem; }
+}
+
+@media screen and (max-width: 1024px) {
+    .container { margin-left: var(--mb15); margin-right: var(--mb15); }
+    .sidebar { width: 100%; z-index: 999; transform: translateX(-100%); }
+    .show-sidebar { transform: translateX(0); }
+    .nav-logo, .btn-share { display: none; }
+    .nav-menu { height: 100%; width: 100%; transform: rotate(0deg) translateX(0); display: flex; justify-content: center; }
+    .nav-list { flex-direction: column; height: 100%; justify-content: center; align-items: center; }
+    .nav-link { padding: 1rem 0; line-height: 1.5; }
+        .nav-link.active-link::after, .nav-link:hover::after { bottom: 0; }
+    .nav-close { display: block; }
+    .nav-toggle { display: flex; }
+
+    .main { margin-left: 0; }
+
+    .about-container { grid-template-columns: 1fr; row-gap: 2.5rem; }
+    .about-img { width: 350px; }
+    .about-data { text-align: center; }
+    .about-info { justify-content: center; }
+    .about-box { padding: 0.75rem .5rem; }
+    .about-description { padding: 0 4rem; text-align: center; }
+
+    .qualification-container { grid-template-columns: repeat(2, 290px); }
+    .skills-container { grid-template-columns: 340px 300px; }
+    .skills-list { row-gap: 1.7rem; }
+
+    .work-card { padding: 1rem; }
+    .work-img { margin-bottom: var(--mb075); }
+    .work-title { margin-bottom: var(--mb025); }
+
+    .services-container { grid-template-columns: repeat(3, 220px); }
+
+    .portfolio-item-details { margin-bottom: var(--mb15); }
+    .details-info li { margin-bottom: var(--mb05); }
+    .details-title { margin-bottom: var(--mb075); }
+}
+
+@media screen and (max-width: 768px) {
+    .about-img { width: 250px; }
+    .qualification-container { grid-template-columns: 290px; row-gap: 3rem; }
+    .skills-container { grid-template-columns: 300px; row-gap: 3rem; }
+    .work-container { grid-template-columns: 330px; }
+
+    .services-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .services-content { padding: 3.5rem .5rem 1.25rem 1.5rem; }
+    .services-icon { font-size: 1.5rem; }
+
+    .contact-container { grid-template-columns: 360px; row-gap: 3rem; }
+    .footer-container { grid-template-columns: repeat(2, 1fr); row-gap: 3rem; }
+    .footer-socials { justify-self: start; }
+    .footer-links { flex-direction: column; row-gap: 1.5rem; }
+    .footer-bg { padding: 2rem 0 3rem; }
+    .footer-copy { margin-top: var(--mb3); }
+
+    .portfolio-popup-inner { width: 420px; padding: 2.8rem 1.5rem 2.5rem; }
+    .portfolio-popup-content { grid-template-columns: 1fr; row-gap: 1.6rem; }
+    .details-title { font-size: var(--normal-font-size); }
+    .portfolio-popup-close { top: .5rem;  }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-toggle { right: initial; left: 1.5rem; }
+    .home { background-image: none; height: initial; align-items: initial; padding: 7rem 0 2rem; }
+    .home-container { row-gap: 2rem; }
+    .home-img { width: 320px; justify-self: center; }
+    .my-info { display: none; }
+    .home-social { left: initial; right: -1rem; flex-direction: column; row-gap: 3.5rem; }
+    .home-social-follow { font-size: var(--smaller-font-size); transform: rotate(90deg); }
+    .home-social-links { flex-direction: column; row-gap: .25rem; }
+    .home-social-link { font-size: var(--normal-font-size); }
+
+    .about-info { grid-template-columns: repeat(3, 1fr); }
+    .about-description { padding: 0; }
+
+    .services-modal-content { padding: 4.5rem 1.5rem 2.5rem; }
+    .services-modal-description { padding: 0; }
+
+    .work-container, .contact-container { grid-template-columns: 300px; }
+
+    .footer-container { grid-template-columns: 1fr;  }
+    .footer-links { justify-self: flex-start; }
+  .h{ flex-direction: column;}
+}
+
+@media screen and (max-width: 350px) {
+    .container { margin-left: var(--mb1); margin-left: var(--mb1); }
+  .h{ flex-direction: column;}
+    .home-img { width: 180px;  }
+    .home-title { font-size: var(--h1-font-size); }
+    .home-subtitle { font-size: var(--normal-font-size); }
+    
+    .about-info { grid-template-columns: repeat(2, 1fr); row-gap: .5rem; }
+    .work-container, .skills-container, .qualification-container, .contact-container { grid-template-columns: 1fr; }
+    .skills-title { font-size: var(--normal-font-size); }
+    .work-item { font-size: var(--normal-font-size); }
+    .work-filters { column-gap: .25rem; }
+    .services-container { grid-template-columns: max-content; }
+    .services-content { padding-right: 3.5rem; }
+}
     </style>
 </head>
-
-<body class="bg-gray-50">
-    <!-- SVG Background Patterns -->
-    <div class="fixed inset-0 z-0 opacity-5">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle cx="3" cy="3" r="1.5" fill="#157368" />
-                </pattern>
-                <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0284c7" stroke-width="0.5" />
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#dots)" />
-            <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+<body>
+    <div class="nav-toggle" id="nav-toggle">
+        <i class="uil uil-bars"></i>
     </div>
 
-    <!-- Hero Section with SVG Waves -->
-    <header class="relative overflow-hidden gradient-bg text-white pt-20 pb-32">
-        <!-- Wave SVG at Bottom -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="transform: translateY(1px);">
-          
-        </div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-right">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">إبراهيم سيد مصطفى</h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-primary-200 mb-6">مطور ويب ومصمم جرافيك</h2>
-                    <p class="text-lg mb-8 max-w-lg mx-auto md:mr-0">مصمم إبداعي ومطور ويب مع خبرة في تصميم الهويات البصرية والواجهات الإلكترونية وإنتاج المحتوى المرئي</p>
-                  
-                </div>
-               <div class="md:w-1/2 flex justify-center">
-<!--                     <div class="relative w-64 h-64 rounded-full bg-white/20 p-2 float-animation">
-                        <div class="w-full h-full rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
-                            <span class="text-6xl font-bold text-white">إ س</span>
-                        </div>
-                        <div class="absolute -top-4 -right-4 w-12 h-12 bg-secondary-400 rounded-full"></div>
-                        <div class="absolute -bottom-6 -left-2 w-16 h-16 bg-primary-300 rounded-full"></div>
-                    </div> -->
-                 
-                 
-                   <div class="flex flex-wrap justify-center md:justify-end gap-4">
-                        <a href="mailto:hema3sh@gmail.com" class="bg-white text-primary-700 hover:bg-primary-50 px-6 py-3 rounded-full transition duration-300 flex items-center">
-                            <i class="fas fa-envelope ml-2"></i>
-                            hema3sh@gmail.com
-                        </a>
-                        <a href="tel:01021328718" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary-700 px-6 py-3 rounded-full transition duration-300 flex items-center">
-                            <i class="fas fa-phone-alt ml-2"></i>
-                            01021328718
-                        </a>
-                    </div>
-                </div>  
+    <aside class="sidebar" id="sidebar">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#" class="nav-logo-text">I</a>
             </div>
-        </div>
-    </header>
 
-    <!-- Main Content with SVG Accents -->
-    <div class="container mx-auto p-4 -mt-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Right Column -->
-            <div class="md:col-span-1 space-y-6">
-                <!-- Personal Information Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-                    <svg class="absolute top-8 left-8 w-32 h-32 text-gray-100 transform -rotate-12 opacity-70 transition-all duration-300 group-hover:scale-125" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" fill="currentColor"/>
-                        <path d="M12 13C7.58172 13 4 16.5817 4 21H20C20 16.5817 16.4183 13 12 13Z" fill="currentColor"/>
-                    </svg>
-                    
-                    <h3 class="text-xl font-bold text-primary-700 mb-6 section-heading">معلومات شخصية</h3>
-                    <ul class="space-y-4 relative z-10">
-                        <li class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
-                                <i class="fas fa-map-marker-alt text-primary-600"></i>
-                            </div>
-                            <span>مصر - الأقصر</span>
+            <div class="nav-menu">
+                <div class="menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active-link">Home</a>
                         </li>
-                        <li class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
-                                <i class="fas fa-user text-primary-600"></i>
-                            </div>
-                            <span>أعزب</span>
+
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
                         </li>
-                        <li class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
-                                <i class="fas fa-birthday-cake text-primary-600"></i>
-                            </div>
-                            <span>29 سنة</span>
+
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
                         </li>
-                        <li class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center ml-3">
-                                <i class="fas fa-shield-alt text-primary-600"></i>
-                            </div>
-                            <span>الخدمة العسكرية: مُنهاة</span>
+
+                        <li class="nav-item">
+                            <a href="#work" class="nav-link">Work</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#services" class="nav-link">Services</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
                         </li>
                     </ul>
                 </div>
+            </div>
 
-                <!-- Social Media Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
-                    <svg class="absolute top-8 left-8 w-32 h-32 text-gray-100 transform rotate-12 opacity-70 transition-all duration-300 group-hover:scale-125" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    
-                    <h3 class="text-xl font-bold text-primary-700 mb-6 section-heading">المواقع</h3>
-                    <ul class="space-y-4 relative z-10">
-                        <li>
-                            <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition duration-300">
-                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center ml-3">
-                                    <i class="fab fa-behance text-blue-600"></i>
+            <div class="btn-share">
+                <a href="https://www.behance.net/Ibrahimtec" target="_blank" style="color: inherit;">
+                    <i class="uil uil-share-alt social-share"></i>
+                </a>
+            </div>
+
+            <div class="nav-close" id="nav-close">
+                <i class="uil uil-times"></i>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="home" id="home">
+            <div class="home-container container grid">
+                <div class="home-social">
+                    <span class="home-social-follow">Follow Me</span>
+                    <div class="home-social-links">
+                        <a href="https://www.facebook.com/hema242" target="_blank" class="home-social-link">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="home-social-link">
+                            <i class="fab fa-behance"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/ibrahim-sayed-mostafa-996b911a4/" target="_blank" class="home-social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+<div class="h" style="display:flex;gap:10px">
+
+                <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784902101/Gemini_Generated_Image_ps5tf8ps5tf8ps5t-Photoroom_ss4zba.png" alt="Ibrahim Sayed" class="home-img">
+
+            <div class="home-data">
+
+              
+              
+              
+              
+                <h1 class="home-title">Hi, I'm Ibrahim</h1>
+                <h3 class="home-subtitle">Graphic Designer &amp; Brand Identity Designer</h3>
+                <p class="home-description">Creative Graphic Designer with over 4 years of experience in branding, social media design, advertising, and digital marketing. I transform ideas into visually compelling designs that strengthen brand identity and drive engagement.</p>
+                <a href="#about" class="button">
+                    <i class="uil uil-user button-icon"></i>
+                    More About me!
+                </a>
+            </div>
+              </div>
+
+
+
+
+
+            <div class="my-info">
+                <div class="info-item">
+                    <i class="fab fa-linkedin-in info-icon"></i>
+
+                    <div>
+                        <h3 class="info-title">LinkedIn</h3>
+                        <span class="info-subtitle">ibrahim-sayed-mostafa</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="uil uil-phone info-icon"></i>
+
+                    <div>
+                        <h3 class="info-title">Phone</h3>
+                        <span class="info-subtitle">+20 102 132 8718</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="uil uil-envelope-edit info-icon"></i>
+
+                    <div>
+                        <h3 class="info-title">Email</h3>
+                        <span class="info-subtitle">hema3sh@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="section-title" data-heading="My Intro">About me</h2>
+
+            <div class="about-container container grid">
+                <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784902089/Whisk_23569acc1996042a3dd45d206abb6289dr_1_-Photoroom_vapvdh.png" alt="Ibrahim Sayed" class="about-img">
+
+                <div class="about-data">
+                    <h3 class="about-heading">Hi, I'm Ibrahim Sayed, based in Luxor, Egypt</h3>
+                    <p class="about-description">Creative Graphic Designer with over 4 years of experience in branding, social media design, advertising, and digital marketing. Skilled at transforming ideas into visually compelling designs that strengthen brand identity and drive engagement. Experienced in collaborating with marketing teams and delivering creative assets for clients across the GCC region. Passionate about modern design trends, AI-powered creative workflows, and producing high-quality visual content.</p>
+
+                    <div class="about-info">
+                        <div class="about-box">
+                            <i class="uil uil-award about-icon"></i>
+                            <h3 class="about-title">Experience</h3>
+                            <span class="about-subtitle">4 + Years</span>
+                        </div>
+
+                        <div class="about-box">
+                            <i class="uil uil-suitcase-alt about-icon"></i>
+                            <h3 class="about-title">Campaigns</h3>
+                            <span class="about-subtitle">GCC Region</span>
+                        </div>
+
+                        <div class="about-box">
+                            <i class="uil uil-headphones-alt about-icon"></i>
+                            <h3 class="about-title">Support</h3>
+                            <span class="about-subtitle">Online 24/7</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="button"><i class="uil uil-navigator button-icon"></i>Contact me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="qualification section">
+            <h2 class="section-title" data-heading="My Journey">Qualifications</h2>
+
+            <div class="qualification-container container grid">
+                <div class="education">
+                    <h3 class="qualification-title"><i class="uil uil-graduation-cap"></i>Education</h3>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">South Valley University (SVU), Egypt</h3>
+                            <p class="timeline-text">Bachelor's Degree, Faculty of Specific Education — Educational Technology</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>Graduate</span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">ICDL Certificate</h3>
+                            <p class="timeline-text">International Computer Driving Licence</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>Certification</span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">PHP & MySQL / IT Essentials</h3>
+                            <p class="timeline-text">Web programming &amp; IT fundamentals training</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>Certification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience">
+                    <h3 class="qualification-title"><i class="uil uil-suitcase"></i>Experience</h3>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">AllTargeting</h3>
+                            <p class="timeline-text">Graphic Designer &amp; Creative Specialist</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2022 - Present</span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Freelance</h3>
+                            <p class="timeline-text">Graphic Designer — Logo, Branding &amp; Print Design</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2020 - 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title" data-heading="My Abilities">My Experience</h2>
+
+            <div class="skills-container container grid">
+                <div class="skills-tabs">
+                    <div class="skills-header skills-active" data-target="#frontend">
+                        <i class="uil uil-image-v skills-icon"></i>
+
+                        <div>
+                            <h1 class="skills-title">Design Software</h1>
+                            <span class="skills-subtitle">Adobe & creative tools</span>
+                            
+                        </div>
+
+                        <i class="uil uil-angle-down skills-arrow"></i>
+                    </div>
+
+                    <div class="skills-header" data-target="#design">
+                        <i class="uil uil-robot skills-icon"></i>
+
+                        <div>
+                            <h1 class="skills-title">AI & Video Tools</h1>
+                            <span class="skills-subtitle">AI-assisted creative workflow</span>
+                            
+                        </div>
+
+                        <i class="uil uil-angle-down skills-arrow"></i>
+                    </div>
+
+                    <div class="skills-header" data-target="#backend">
+                        <i class="uil uil-globe skills-icon"></i>
+
+                        <div>
+                            <h1 class="skills-title">Web & UI</h1>
+                            <span class="skills-subtitle">Basic web & UI skills</span>
+
+                        </div>
+
+                        <i class="uil uil-angle-down skills-arrow"></i>
+                    </div>
+                </div>
+
+                <div class="skills-content">
+                    <div class="skills-group skills-active" data-content id="frontend">
+                        <div class="skills-list grid">
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Adobe Photoshop</h3>
+                                    <span class="skills-number">100%</span>
                                 </div>
-                                <span class="font-medium">Behance</span>
-                            </a>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 100%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Adobe Illustrator</h3>
+                                    <span class="skills-number">100%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 100%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Canva Pro</h3>
+                                    <span class="skills-number">100%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 100%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Adobe InDesign</h3>
+                                    <span class="skills-number">80%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 80%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Figma</h3>
+                                    <span class="skills-number">80%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 80%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-group" data-content id="design">
+                        <div class="skills-list grid">
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">CapCut</h3>
+                                    <span class="skills-number">90%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 90%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">ChatGPT / Midjourney</h3>
+                                    <span class="skills-number">85%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 85%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Adobe Firefly / Leonardo AI</h3>
+                                    <span class="skills-number">85%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 85%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Adobe Premiere Pro (Basic)</h3>
+                                    <span class="skills-number">40%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 40%;"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="skills-group" data-content id="backend">
+                        <div class="skills-list grid">
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">WordPress</h3>
+                                    <span class="skills-number">75%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 75%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">HTML / CSS</h3>
+                                    <span class="skills-number">70%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 70%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Tailwind CSS</h3>
+                                    <span class="skills-number">65%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 65%;"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Basic UI/UX Design</h3>
+                                    <span class="skills-number">60%</span>
+                                </div>
+
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 60%;"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work section" id="work">
+            <h2 class="section-title" data-heading="My Portfolio">Recent Works</h2>
+
+            <div class="work-filters">
+                <span class="work-item active-work" data-filter="all">All</span>
+                <span class="work-item" data-filter=".branding">Branding</span>
+                <span class="work-item" data-filter=".social">Social Media</span>
+                <span class="work-item" data-filter=".profile">Company Profile</span>
+            </div>
+
+            <div class="work-container container grid">
+                <div class="work-card mix branding">
+                    <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662516/paropa_vk8ehj.png" alt="" class="work-img">
+                    <h3 class="work-title">PARUPA</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">PARUPA — Brand Identity</h3>
+                        <p class="details-description">Complete visual brand identity design including logo, typography and color system.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Brand Identity</span></li>
+                            <li>Tools - <span>Illustrator, Photoshop</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://drive.google.com/drive/folders/1hE4v_XnveHFX0_KI2bomdvUYeP9xv0wC" target="_blank">Drive Folder</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix branding">
+                    <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662324/all_targeting_p7nzpe.png" alt="" class="work-img">
+                    <h3 class="work-title">All Targeting</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">All Targeting — Assorted Materials</h3>
+                        <p class="details-description">Marketing and creative materials produced for the AllTargeting agency and its brands.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Marketing Materials</span></li>
+                            <li>Tools - <span>Photoshop, Canva</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://drive.google.com/drive/folders/1dZePe5jc4sYpI661EFEULvFGljzRnthe" target="_blank">Drive Folder</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix branding">
+                    <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742674410/15565d61-c569-4871-9564-f56f17434853.png" alt="" class="work-img">
+                    <h3 class="work-title">Inmak</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Inmak — Logo Design</h3>
+                        <p class="details-description">Logo design project for the Inmak brand.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Logo Design</span></li>
+                            <li>Tools - <span>Illustrator</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://drive.google.com/drive/folders/1KYQywyBWU0wBu7JT6MvczQrz4vmWArGq" target="_blank">Drive Folder</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix social">
+                    <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662313/flagedu_eyfqrw.png" alt="" class="work-img">
+                    <h3 class="work-title">FlagEdu</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">FlagEdu — Assorted Designs</h3>
+                        <p class="details-description">Educational marketing content and visuals for the FlagEdu learning platform.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Social Media Design</span></li>
+                            <li>Tools - <span>Photoshop, Canva</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://drive.google.com/drive/folders/1pogyF9DmoeS-amq86CVWzU-bzNxyqceB" target="_blank">Drive Folder</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix social">
+                    <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662294/foodtech_e6vdiz.png" alt="" class="work-img">
+                    <h3 class="work-title">Food Tech</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Food Tech — Social Media Designs</h3>
+                        <p class="details-description">Social media creative content for a food-tech brand.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Social Media Design</span></li>
+                            <li>Tools - <span>Photoshop, Canva</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://drive.google.com/open?id=1yFncAYkFneGA3a_kucUXXm9OHprBvGxZ&usp=drive_copy" target="_blank">Drive Folder</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix social">
+                    <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662252/9aeae2209277171.66fcea130e2db_v5r6u9.jpg" alt="" class="work-img">
+                    <h3 class="work-title">HAJEEG</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">HAJEEG — Social Media Designs</h3>
+                        <p class="details-description">Social media visual content produced for the HAJEEG brand.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Social Media Design</span></li>
+                            <li>Tools - <span>Photoshop, Canva</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://drive.google.com/drive/folders/1FLb2C1x0aYU8dX-YHF4zaP9EjU1gcE5B" target="_blank">Drive Folder</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix branding">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699395/8bf01631-8843-45b1-844a-b5438b4c6bb0.png" alt="" class="work-img">
+                    <h3 class="work-title">Creative Design Project</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Creative Design Project</h3>
+                        <p class="details-description">Creative design project — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Design</span></li>
+                            <li>Tools - <span>Photoshop, Illustrator</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/228468561/_" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix profile">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699484/0fc847f0-137a-47db-a963-470eff36a535.png" alt="" class="work-img">
+                    <h3 class="work-title">OOC — Company Profile</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">OOC — Company Profile</h3>
+                        <p class="details-description">Corporate company profile design — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Company Profile</span></li>
+                            <li>Tools - <span>Photoshop, InDesign</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/246971121/OOC-profile-company" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix profile">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699557/69101e81-6edd-4f41-aa86-d17ee799bc37.png" alt="" class="work-img">
+                    <h3 class="work-title">OOP — Company Profile</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">OOP — Company Profile</h3>
+                        <p class="details-description">Corporate company profile design — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Company Profile</span></li>
+                            <li>Tools - <span>Photoshop, InDesign</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/238321967/OOP-Company-Profile" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix branding">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699624/c3ab6755-b737-44ca-8e43-115b541d158e.png" alt="" class="work-img">
+                    <h3 class="work-title">Daman Trader</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Daman Trader</h3>
+                        <p class="details-description">Brand identity and marketing design for Daman Trader — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Brand Identity</span></li>
+                            <li>Tools - <span>Photoshop, Illustrator</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/246816281/Daman-Trader" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix social">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699731/Gemini_Generated_Image_vk5incvk5incvk5i_oxvobh.png" alt="" class="work-img">
+                    <h3 class="work-title">AI-Generated Creative Design</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">AI-Generated Creative Design</h3>
+                        <p class="details-description">Creative visual produced using AI-assisted design tools — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>AI Creative Design</span></li>
+                            <li>Tools - <span>Gemini, Photoshop</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/252801501/_" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix social">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699911/New_Project_2_asxyqj.jpg" alt="" class="work-img">
+                    <h3 class="work-title">Creative Design Project</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Creative Design Project</h3>
+                        <p class="details-description">Creative design project — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Design</span></li>
+                            <li>Tools - <span>Photoshop, Illustrator</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/252801501/_" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-card mix social">
+                    <img src="https://res.cloudinary.com/dgewj1ex/image/upload/v1784699822/6584f3ad-3fdd-4e0a-ab0d-da2441f166d7.png" alt="" class="work-img">
+                    <h3 class="work-title">Creative Design Project</h3>
+                    <span class="work-button">View<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Creative Design Project</h3>
+                        <p class="details-description">Creative design project — full case study available on Behance.</p>
+                        <ul class="details-info">
+                            <li>Category - <span>Design</span></li>
+                            <li>Tools - <span>Photoshop, Illustrator</span></li>
+                            <li>Role - <span>Graphic Designer</span></li>
+                            <li>View - <span><a href="https://www.behance.net/gallery/246971491/_" target="_blank">Behance</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="portfolio-popup">
+            <div class="portfolio-popup-inner">
+                <div class="portfolio-popup-content grid">
+                    <span class="portfolio-popup-close"><i class="uil uil-times"></i></span>
+                    <div class="pp-thumbnail">
+                        <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662516/paropa_vk8ehj.png" alt="" class="portfolio-popup-img">
+                    </div>
+
+                    <div class="portfolio-popup-info">
+                        <div class="portfolio-popup-subtitle">Featured - <span>Design</span></div>
+                        <div class="portfolio-popup-body">
+                            <h3 class="details-title">PARUPA — Brand Identity</h3>
+                            <p class="details-description">Complete visual brand identity design including logo, typography and color system.</p>
+
+                            <ul class="details-info">
+                                <li>Category - <span>Brand Identity</span></li>
+                                <li>Tools - <span>Illustrator, Photoshop</span></li>
+                                <li>Role - <span>Graphic Designer</span></li>
+                                <li>View - <span><a href="https://drive.google.com/drive/folders/1hE4v_XnveHFX0_KI2bomdvUYeP9xv0wC" target="_blank">Drive Folder</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="services section" id="services">
+            <h2 class="section-title" data-heading="Services">What I Offer</h2>
+
+            <div class="services-container container grid">
+                <div class="services-content">
+                    <div>
+                        <i class="uil uil-image-v services-icon"></i>
+                        <h3 class="services-title">Graphic <br> Design</h3>
+                    </div>
+
+                    <span class="services-button">
+                        View More <i class="uil uil-arrow-right services-button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <i class="uil uil-times services-modal-close"></i>
+
+                            <h3 class="services-modal-title">Graphic Design</h3>
+                            <p class="services-modal-description">Over 4 years of experience delivering quality creative work to clients and companies</p>
+
+                            <ul class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Logo Design</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Print & Packaging Design</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Brochures & Flyers</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Marketing Presentations</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Photo Manipulation</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-content">
+                    <div>
+                        <i class="uil uil-swatchbook services-icon"></i>
+                        <h3 class="services-title">Brand <br> Identity</h3>
+                    </div>
+
+                    <span class="services-button">
+                        View More <i class="uil uil-arrow-right services-button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <i class="uil uil-times services-modal-close"></i>
+
+                            <h3 class="services-modal-title">Brand Identity</h3>
+                            <p class="services-modal-description">Building complete visual identities that make brands memorable and consistent</p>
+
+                            <ul class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Visual Identity Systems</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Typography & Color Palettes</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Brand Guidelines</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Restaurant & Product Branding</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Creative Direction</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-content">
+                    <div>
+                        <i class="uil uil-megaphone services-icon"></i>
+                        <h3 class="services-title">Social Media <br> Design</h3>
+                    </div>
+
+                    <span class="services-button">
+                        View More <i class="uil uil-arrow-right services-button-icon"></i>
+                    </span>
+
+                    <div class="services-modal">
+                        <div class="services-modal-content">
+                            <i class="uil uil-times services-modal-close"></i>
+
+                            <h3 class="services-modal-title">Social Media Design</h3>
+                            <p class="services-modal-description">Creative assets for advertising and social platforms across the GCC region</p>
+
+                            <ul class="services-modal-services grid">
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Meta, Google & TikTok Ad Creatives</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Snapchat & LinkedIn Campaigns</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Short-form Video Content (CapCut)</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">Landing Pages & Website Graphics</p>
+                                </li>
+
+                                <li class="services-modal-service">
+                                    <i class="uil uil-check-circle services-modal-icon"></i>
+                                    <p class="services-modal-info">AI-Assisted Creative Workflows</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <h2 class="section-title" data-heading="Get in Touch">Contact me</h2>
+
+            <div class="contact-container container grid">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="uil uil-envelope-edit contact-card-icon"></i>
+                            <h3 class="contact-card-title">Email</h3>
+                            <span class="contact-card-data">hema3sh@gmail.com</span>
+                            <a href="mailto:hema3sh@gmail.com" class="contact-button">Write me <i class="uil uil-arrow-right contact-button-icon"></i></a>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="uil uil-phone contact-card-icon"></i>
+                            <h3 class="contact-card-title">Phone</h3>
+                            <span class="contact-card-data">+20 102 132 8718</span>
+                            <a href="tel:+201021328718" class="contact-button">Call me <i class="uil uil-arrow-right contact-button-icon"></i></a>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="fab fa-linkedin-in contact-card-icon"></i>
+                            <h3 class="contact-card-title">LinkedIn</h3>
+                            <span class="contact-card-data">ibrahim-sayed-mostafa</span>
+                            <a href="https://www.linkedin.com/in/ibrahim-sayed-mostafa-996b911a4/" target="_blank" class="contact-button">Connect <i class="uil uil-arrow-right contact-button-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+        
+
+        <form id="contact-form" class="contact-form">
+            <div class="input-container">
+                <input type="text" id="name" name="name" class="input" required />
+                <label for="name">Name</label>
+                <span>Name</span>
+            </div>
+
+            <div class="input-container">
+                <input type="email" id="email" name="email" class="input" required />
+                <label for="email">Email</label>
+                <span>Email</span>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="project" name="project" class="input" />
+                <label for="project">Project / Subject</label>
+                <span>Project / Subject</span>
+            </div>
+
+            <div class="input-container textarea">
+                <textarea id="message" name="message" class="input" required></textarea>
+                <label for="message">Message</label>
+                <span>Message</span>
+            </div>
+
+            <button type="submit" id="submit-btn" class="button">
+                <i class="uil uil-message button-icon"></i> Send Message
+            </button>
+            
+            <!-- رسالة حالة الإرسال -->
+            <p id="form-status" style="margin-top: 1rem; font-size: var(--small-font-size);"></p>
+        </form>
+
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <div class="footer-bg">
+                <div class="footer-container container grid">
+                    <div>
+                        <h1 class="footer-title">Ibrahim Sayed</h1>
+                        <span class="footer-subtitle">Graphic & Brand Identity Designer</span>
+                    </div>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#services" class="footer-links">Services</a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/@ibrahimsayed1608" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition duration-300">
-                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center ml-3">
-                                    <i class="fab fa-youtube text-red-600"></i>
-                                </div>
-                                <span class="font-medium">YouTube</span>
-                            </a>
+                            <a href="#work" class="footer-links">Work</a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/hema242" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition duration-300">
-                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center ml-3">
-                                    <i class="fab fa-facebook text-blue-600"></i>
-                                </div>
-                                <span class="font-medium">Facebook</span>
-                            </a>
+                            <a href="#contact" class="footer-links">Contact</a>
                         </li>
                     </ul>
-                </div>
-                
-                <!-- Work Experience Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform -rotate-6 opacity-70 transition-all duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" fill="currentColor"/>
-                        <path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    
-                    <h3 class="text-2xl font-bold text-primary-700 mb-6 section-heading relative z-10">الخبرات السابقة</h3>
-                    
-                    <div class="relative border-r-2 border-primary-300 pr-6 mb-8 z-10">
-                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
-                        <div class="mb-6">
-                            <h4 class="text-xl font-bold text-primary-700">مصمم جرافيك ومطور ويب</h4>
-                            <p class="text-gray-700 font-semibold">شركة All Targeting التسويقية (2022 - الوقت الحالي)</p>
-                            <p class="text-gray-600 mt-2">شركة تسويقية تضم عدة علامات تجارية منها Flagedu - ArabPorsa - DamanTrader - CouponsCopy</p>
-                            <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
-                                <li>تصميم وتطوير الهويات البصرية للعلامات التجارية التابعة للشركة</li>
-                                <li>إنشاء المحتوى البصري لمنصات التواصل الاجتماعي والمواد التسويقية</li>
-                                <li>تصميم واجهات المستخدم (UI) وتحسين تجربة المستخدم (UX) للمواقع والتطبيقات</li>
-                                <li>إنتاج مقاطع فيديو تعليمية وتسويقية للمنصات التعليمية مثل Flagedu</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="relative border-r-2 border-primary-300 pr-6 mb-8 z-10">
-                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
-                        <div class="mb-6">
-                            <h4 class="text-xl font-bold text-primary-700">مصمم جرافيك مستقل</h4>
-                            <p class="text-gray-700 font-semibold">العمل الحر (2020 - 2022)</p>
-                            <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
-                                <li>تصميم شعارات وهويات بصرية للشركات الناشئة والمشاريع الصغيرة</li>
-                                <li>إنتاج محتوى مرئي لمنصات التواصل الاجتماعي والمواد الإعلانية</li>
-                                <li>إنشاء مواقع ويب بسيطة باستخدام WordPress وHTML/CSS</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="relative border-r-2 border-primary-300 pr-6 z-10">
-                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
-                        <div class="mb-6">
-                            <h4 class="text-xl font-bold text-primary-700">منتج ومحرر فيديو</h4>
-                            <p class="text-gray-700 font-semibold">مشاريع تعليمية وتسويقية (2019 - 2020)</p>
-                            <ul class="list-disc pr-6 mt-3 space-y-2 text-gray-700">
-                                <li>إنتاج وتحرير محتوى فيديوهات تعليمية</li>
-                                <li>إنشاء رسوم توضيحية للمفاهيم التعليمية المعقدة</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Main Content -->
-            <div class="md:col-span-2 space-y-6">
-                <!-- Education Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
-                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform rotate-12 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                    <h3 class="text-2xl font-bold text-primary-700 mb-6 section-heading relative z-10">المؤهلات العلمية</h3>
-                    <div class="relative border-r-2 border-primary-300 pr-6 z-10">
-                        <div class="absolute right-[-8px] top-0 w-4 h-4 rounded-full bg-primary-500"></div>
-                        <div class="mb-6">
-                            <h4 class="text-xl font-bold text-primary-700">بكالوريوس كلية التربية النوعية</h4>
-                            <p class="text-gray-600">تخصص: تكنولوجيا التعليم</p>
-                            <p class="text-gray-600">الجامعة: جامعة جنوب الوادي (SVU)</p>
-                        </div>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/hema242" target="_blank" class="footer-social">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.behance.net/Ibrahimtec" target="_blank" class="footer-social">
+                            <i class="fab fa-behance"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/ibrahim-sayed-mostafa-996b911a4/" target="_blank" class="footer-social">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Certificates Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform -rotate-12 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6H4V18H20V6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" fill="currentColor"/>
-                        <path d="M18 14C18 11.7909 15.3137 10 12 10C8.68629 10 6 11.7909 6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                    <h3 class="text-2xl font-bold text-primary-700 mb-6 section-heading relative z-10">الشهادات والدورات التدريبية</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
-                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
-                                <i class="fas fa-code text-primary-600 text-xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800">برمجة الويب</h4>
-                            <p class="text-gray-600">PHP & MySQL</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
-                                <i class="fas fa-desktop text-primary-600 text-xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800">ICDL</h4>
-                            <p class="text-gray-600">الرخصة الدولية لقيادة الحاسب</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
-                                <i class="fas fa-paint-brush text-primary-600 text-xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800">تصميم البوسترات العلمية</h4>
-                            <p class="text-gray-600">أساسيات ومهارات</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg hover:bg-primary-50 transition-all duration-300">
-                            <div class="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mb-3">
-                                <i class="fas fa-network-wired text-primary-600 text-xl"></i>
-                            </div>
-                            <h4 class="font-bold text-gray-800">IT Essentials</h4>
-                            <p class="text-gray-600">أساسيات تكنولوجيا المعلومات</p>
-                        </div>
-                    </div>
-                </div>
+                <p class="footer-copy">&#169; <span id="currentYear">2025</span> Ibrahim Sayed. All rights reserved</p>
+            </div>
+        </footer>
+    </main>
 
-            <!-- Skills Card -->
-<div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-    <!-- Gradient header bar -->
-    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
-    
-    <!-- Background icon -->
-    <svg class="absolute top-8 right-8 w-40 h-40 text-gray-100 transform rotate-6 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-        <path d="M14.2426 5.75736L10 10L11.7574 11.7574L16 7.51472L14.2426 5.75736Z" fill="currentColor"/>
-        <path d="M16.8787 14.1213L19.0711 11.9289L17.3137 10.1716L15.1213 12.364L16.8787 14.1213Z" fill="currentColor"/>
-        <path d="M8.8787 16.1213L14.1213 10.8787L12.364 9.12132L7.12132 14.364L8.8787 16.1213Z" fill="currentColor"/>
-        <path d="M5.63603 18.364L8.8787 15.1213L7.12132 13.364L3.87868 16.6066L5.63603 18.364Z" fill="currentColor"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.87868 11.1213L11.1213 2.87868C11.7071 2.29289 12.2929 2.29289 12.8787 2.87868L21.1213 11.1213C21.7071 11.7071 21.7071 12.2929 21.1213 12.8787L12.8787 21.1213C12.2929 21.7071 11.7071 21.7071 11.1213 21.1213L2.87868 12.8787C2.29289 12.2929 2.29289 11.7071 2.87868 11.1213ZM11.1213 4.29289L4.29289 11.1213L4.29289 12.8787L11.1213 19.7071C11.7071 20.2929 12.2929 20.2929 12.8787 19.7071L19.7071 12.8787C20.2929 12.2929 20.2929 11.7071 19.7071 11.1213L12.8787 4.29289C12.2929 3.7071 11.7071 3.7071 11.1213 4.29289Z" fill="currentColor"/>
-    </svg>
-    
-    <!-- Skills Content -->
-    <div class="relative z-10">
-        <h3 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2 flex items-center">
-            <i class="fas fa-code mr-2"></i>
-            المهارات التقنية
-        </h3>
-        
-        <!-- Programming Skills -->
-        <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات البرمجة وتصميم الويب</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>HTML</span>
-                    <span class="text-sm text-teal-700">90%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>CSS</span>
-                    <span class="text-sm text-teal-700">85%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>JavaScript</span>
-                    <span class="text-sm text-teal-700">75%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 75%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Bootstrap</span>
-                    <span class="text-sm text-teal-700">80%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Tailwind CSS</span>
-                    <span class="text-sm text-teal-700">85%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>WordPress</span>
-                    <span class="text-sm text-teal-700">80%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Graphic Design Skills -->
-        <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات الجرافيك والتصميم</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Adobe Photoshop</span>
-                    <span class="text-sm text-teal-700">95%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Adobe Illustrator</span>
-                    <span class="text-sm text-teal-700">90%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>GIMP</span>
-                    <span class="text-sm text-teal-700">85%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Edraw Max</span>
-                    <span class="text-sm text-teal-700">80%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Canva</span>
-                    <span class="text-sm text-teal-700">95%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Video Editing Skills -->
-        <h4 class="text-lg font-bold text-teal-600 mb-3">مهارات المونتاج وصناعة الفيديو</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Vegas Pro</span>
-                    <span class="text-sm text-teal-700">90%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>After Effects</span>
-                    <span class="text-sm text-teal-700">85%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Filmora</span>
-                    <span class="text-sm text-teal-700">95%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>Camtasia</span>
-                    <span class="text-sm text-teal-700">85%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-between mb-1">
-                    <span>CapCut</span>
-                    <span class="text-sm text-teal-700">90%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-              
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
 
-                <!-- Portfolio Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-                    <svg class="absolute top-8 left-8 w-40 h-40 text-gray-100 transform -rotate-6 opacity-70 transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 5H20V19H4V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 5L12 13L20 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 19L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20 19L14 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-                     <!-- Portfolio Section -->
- 
-        <h2 class="text-3xl font-bold text-teal-700 mb-8 text-center">أعمال سابقة</h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Portfolio Items -->
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662313/flagedu_eyfqrw.png" alt="FlagEdu Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">FlagEdu</h3>
-                    <p class="text-gray-600 mb-3">تصاميم متنوعة</p>
-                    <a href="https://drive.google.com/drive/folders/1pogyF9DmoeS-amq86CVWzU-bzNxyqceB" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662294/foodtech_e6vdiz.png" alt="Food Tech Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">Food Tech</h3>
-                   <p class="text-gray-600 mb-3"> تصاميم سوشيال</p>
-                    <a href="https://drive.google.com/open?id=1yFncAYkFneGA3a_kucUXXm9OHprBvGxZ&usp=drive_copy" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662282/%D8%A7%D8%B1%D8%AA%D8%B1%D8%A7_uc9y61.png" alt="Ultra Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">Ultra</h3>
-                   <p class="text-gray-600 mb-3"> تصاميم سوشيال</p>
-                    <a href="https://drive.google.com/drive/folders/1BP6UVTA3_NK_fCUfr3R52wFO8xPQCc2q" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662324/all_targeting_p7nzpe.png" alt="All Targeting Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">All Targeting</h3>
-                    <p class="text-gray-600 mb-3">مواد متنوعة</p>
-                    <a href="https://drive.google.com/drive/folders/1dZePe5jc4sYpI661EFEULvFGljzRnthe" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662516/paropa_vk8ehj.png" alt="PARUPA Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">PARUPA</h3>
-                    <p class="text-gray-600 mb-3">تصميم هوية بصرية</p>
-                    <a href="https://drive.google.com/drive/folders/1hE4v_XnveHFX0_KI2bomdvUYeP9xv0wC" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>
-            
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742662252/9aeae2209277171.66fcea130e2db_v5r6u9.jpg" alt="HAJEEG Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">HAJEEG</h3>
-                    <p class="text-gray-600 mb-3"> تصاميم سوشيال</p>
-                    <a href="https://drive.google.com/drive/folders/1FLb2C1x0aYU8dX-YHF4zaP9EjU1gcE5B" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>
-          
-         
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742674410/15565d61-c569-4871-9564-f56f17434853.png" alt="HAJEEG Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">inmak</h3>
-                    <p class="text-gray-600 mb-3"> شعار</p>
-                    <a href="https://drive.google.com/drive/folders/1KYQywyBWU0wBu7JT6MvczQrz4vmWArGq" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>  
-          
-          
-          
-          
-           
-            <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://res.cloudinary.com/dss0sdpz7/image/upload/v1742674943/2c470e09-9199-44b0-9199-2302f2fd3382.png" alt="HAJEEG Project" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2">bankbliss</h3>
-                    <p class="text-gray-600 mb-3"> site</p>
-                    <a href=" https://drive.google.com/drive/folders/1EwHppAIDzSK2jnpGY4M8ZD-oZlgqKEYq" target="_blank" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded transition duration-300">عرض المشروع</a>
-                </div>
-            </div>  
-          
-          
-         
-          
-          
-       
-    </div>
+    // 1. Toggling Skill Tabs
+    const tabs = document.querySelectorAll('[data-target]');
+    const tabContent = document.querySelectorAll('[data-content]');
 
-    </div>
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.target);
+            if (!target) return;
 
-              
-              
-        </div>    </div>    </div>       
-              
-              
-              
-              
-              
-              
-   <!-- Contact Section -->
-    <section class="gradient-bg text-white py-16 mt-16 relative">
-        <!-- Wave SVG at Top -->
-        <div class="absolute top-0 left-0 w-full overflow-hidden" style="transform: translateY(-99%);">
-           
-          
-        </div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center">تواصل معي</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">البريد الإلكتروني</h3>
-                    <p><a href="mailto:hema3sh@gmail.com" class="text-white hover:text-gray-200 transition-colors">hema3sh@gmail.com</a></p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">الهاتف</h3>
-                    <p><a href="tel:+201021328718" class="text-white hover:text-gray-200 transition-colors">01021328718</a></p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">العنوان</h3>
-                    <p>مصر - الأقصر</p>
-                </div>
-            </div>
-            
-       
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="text-center md:text-right mb-6 md:mb-0">
-                    <h2 class="text-2xl font-bold mb-2">إبراهيم سيد مصطفى</h2>
-                    <p class="text-gray-400">مصمم جرافيك ومطور ويب</p>
-                </div>
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <a href="https://www.facebook.com/hema242" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition duration-300">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.behance.net/Ibrahimtec" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition duration-300">
-                        <i class="fab fa-behance"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@ibrahimsayed1608" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition duration-300">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-6 pt-6 text-center">
-                <p class="text-gray-400">&copy; <span id="currentYear">2025</span> جميع الحقوق محفوظة</p>
-            </div>
-        </div>
-    </footer>
+            tabContent.forEach(tc => tc.classList.remove('skills-active'));
+            target.classList.add('skills-active');
 
-    <script>
-        // Set current year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Animate skill bars on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            let skillFills = document.querySelectorAll('.skill-fill');
-            
-            function animateSkills() {
-                skillFills.forEach(fill => {
-                    const targetWidth = fill.parentElement.getAttribute('data-width') || fill.style.width;
-                    fill.style.width = targetWidth;
-                });
-            }
-            
-            // Initial animation
-            setTimeout(animateSkills, 500);
-            
-            // Animate on scroll
-            window.addEventListener('scroll', function() {
-                let scrolled = window.scrollY;
-                
-                if (scrolled > 300) {
-                    animateSkills();
+            tabs.forEach(t => t.classList.remove('skills-active'));
+            tab.classList.add('skills-active');
+        });
+    });
+
+    // 2. MixItUp Sorting (Safe Init)
+    if (typeof mixitup !== 'undefined' && document.querySelector('.work-container')) {
+        mixitup('.work-container', {
+            selectors: { target: '.work-card' },
+            animation: { duration: 300 }
+        });
+    }
+
+    // 3. Active Work Filter Class Toggle
+    const linkWork = document.querySelectorAll('.work-item');
+    linkWork.forEach(l => {
+        l.addEventListener('click', function() {
+            linkWork.forEach(item => item.classList.remove('active-work'));
+            this.classList.add('active-work');
+        });
+    });
+
+    // 4. Portfolio Popup
+    const portfolioPopup = document.querySelector('.portfolio-popup');
+    const popupCloseBtn = document.querySelector('.portfolio-popup-close');
+
+    function togglePortfolioPopup() {
+        if (portfolioPopup) portfolioPopup.classList.toggle('open');
+    }
+
+    if (popupCloseBtn) {
+        popupCloseBtn.addEventListener('click', togglePortfolioPopup);
+    }
+
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.work-button');
+        if (btn) {
+            togglePortfolioPopup();
+            portfolioItemDetails(btn.parentElement);
+        }
+    });
+
+    function portfolioItemDetails(portfolioItem) {
+        const thumbImg = document.querySelector('.pp-thumbnail img');
+        const subtitleSpan = document.querySelector('.portfolio-popup-subtitle span');
+        const popupBody = document.querySelector('.portfolio-popup-body');
+
+        const workImg = portfolioItem.querySelector('.work-img');
+        const workTitle = portfolioItem.querySelector('.work-title');
+        const itemDetails = portfolioItem.querySelector('.portfolio-item-details');
+
+        if (thumbImg && workImg) thumbImg.src = workImg.src;
+        if (subtitleSpan && workTitle) subtitleSpan.innerHTML = workTitle.innerHTML;
+        if (popupBody && itemDetails) popupBody.innerHTML = itemDetails.innerHTML;
+    }
+
+    // 5. Services Modal
+    const modalViews = document.querySelectorAll('.services-modal');
+    const modelBtns = document.querySelectorAll('.services-button');
+    const modalCloses = document.querySelectorAll('.services-modal-close');
+
+    modelBtns.forEach((modelBtn, i) => {
+        modelBtn.addEventListener('click', () => {
+            if (modalViews[i]) modalViews[i].classList.add('active-modal');
+        });
+    });
+
+    modalCloses.forEach(modalClose => {
+        modalClose.addEventListener('click', () => {
+            modalViews.forEach(modalView => modalView.classList.remove('active-modal'));
+        });
+    });
+
+    // 6. Floating Input Labels Animation
+    const inputs = document.querySelectorAll('.input');
+
+    function focusFunc() {
+        this.parentNode.classList.add('focus');
+    }
+
+    function blurFunc() {
+        if (this.value.trim() === "") {
+            this.parentNode.classList.remove('focus');
+        }
+    }
+
+    inputs.forEach(input => {
+        input.addEventListener('focus', focusFunc);
+        input.addEventListener('blur', blurFunc);
+        // تفعيل التأثير تلقائياً إذا كان المكتوب يحتوي على قيمة مبدئية
+        if (input.value.trim() !== "") {
+            input.parentNode.classList.add('focus');
+        }
+    });
+
+    // 7. Scroll Section Active Link Highlight
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', navHighlighter);
+
+    function navHighlighter() {
+        let scrollY = window.pageYOffset;
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 50;
+            const sectionId = current.getAttribute('id');
+            const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+
+            if (navLink) {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLink.classList.add('active-link');
+                } else {
+                    navLink.classList.remove('active-link');
                 }
+            }
+        });
+    }
+
+    // 8. Sidebar Toggle
+    const navMenu = document.getElementById('sidebar');
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => navMenu.classList.add('show-sidebar'));
+    }
+
+    if (navClose && navMenu) {
+        navClose.addEventListener('click', () => navMenu.classList.remove('show-sidebar'));
+    }
+
+    // 9. Dynamic Year Update
+    const currentYearEl = document.getElementById('currentYear');
+    if (currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
+    }
+
+    // 10. Contact Form Submission (Google Sheets Integration)
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwX4S1Cox1InnYCPlwbA0_XoD1YnTcZj2L5U__2l9DD8T-qkhKVTi3UcXS9aJbywKK/exec';
+    const form = document.getElementById('contact-form');
+    const statusText = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            if (submitBtn) submitBtn.disabled = true;
+            if (statusText) {
+                statusText.style.color = 'var(--text-color)';
+                statusText.innerText = 'Sending...';
+            }
+
+            const data = {
+                name: document.getElementById('name')?.value || '',
+                email: document.getElementById('email')?.value || '',
+                project: document.getElementById('project')?.value || '',
+                message: document.getElementById('message')?.value || ''
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                if (statusText) {
+                    statusText.style.color = '#4CAF50';
+                    statusText.innerText = 'Message sent successfully!';
+                }
+                form.reset();
+                inputs.forEach(input => input.parentNode.classList.remove('focus'));
+                if (submitBtn) submitBtn.disabled = false;
+            })
+            .catch(error => {
+                if (statusText) {
+                    statusText.style.color = '#F44336';
+                    statusText.innerText = 'Error sending message. Please try again.';
+                }
+                console.error('Error!', error.message);
+                if (submitBtn) submitBtn.disabled = false;
             });
         });
-    </script>
+    }
+
+});
+</script>
 </body>
 </html>
