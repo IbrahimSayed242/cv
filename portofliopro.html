@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بورتفوليو احترافي مخصص لك | صمّم حضورك المهني</title>
+<meta name="description" content="نصمم لك بورتفوليو احترافي مخصص حسب مجالك، تصميم عصري يجذب العملاء ويفتح لك فرص عمل جديدة. تواصل معنا الآن عبر واتساب.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#2563EB;
+    --primary-dim:#1d4ed8;
+    --secondary:#0EA5E9;
+    --accent:#F59E0B;
+    --bg:#F8FAFC;
+    --dark:#0F172A;
+    --dark-2:#152244;
+    --text:#1E293B;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'IBM Plex Sans Arabic','Cairo',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Cairo','IBM Plex Sans Arabic',sans-serif;
+  }
+  ::selection{background:var(--accent);color:#0F172A;}
+
+  /* focus visibility for a11y */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:3px solid var(--secondary);
+    outline-offset:2px;
+    border-radius:8px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed; top:0; right:0; left:0; z-index:100;
+    padding:14px 0;
+    transition:all .35s ease;
+  }
+  .nav.scrolled{
+    background:rgba(248,250,252,.78);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    box-shadow:0 1px 0 rgba(15,23,42,.06), 0 12px 30px -20px rgba(15,23,42,.25);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--dark);}
+  .logo-mark{
+    width:38px;height:38px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .logo-mark img{width:100%;height:100%;object-fit:contain;display:block;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--text);text-decoration:none;font-size:14.5px;font-weight:600;opacity:.8;transition:opacity .2s, color .2s;position:relative;}
+  .nav-links a:hover{opacity:1;color:var(--primary);}
+  .nav-cta{
+    display:flex;align-items:center;gap:8px;
+    background:var(--dark);color:#fff;padding:10px 20px;border-radius:999px;
+    font-weight:700;font-size:14px;text-decoration:none;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 8px 20px -8px rgba(15,23,42,.5);
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(15,23,42,.55);}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:700;font-size:15.5px;
+    padding:16px 30px;border-radius:16px;
+    text-decoration:none;cursor:pointer;border:none;
+    transition:transform .3s cubic-bezier(.2,.9,.3,1), box-shadow .3s ease, background .3s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:#fff;
+    box-shadow:0 14px 30px -12px rgba(37,99,235,.65);
+  }
+  .btn-primary:hover{transform:translateY(-3px) scale(1.015);box-shadow:0 20px 38px -14px rgba(37,99,235,.75);}
+  .btn-ghost{
+    background:rgba(15,23,42,.04);
+    color:var(--dark);
+    border:1.5px solid rgba(15,23,42,.12);
+  }
+  .btn-ghost:hover{background:rgba(15,23,42,.08);transform:translateY(-2px);}
+  .btn-big{padding:20px 40px;font-size:18px;border-radius:18px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:168px 0 110px;
+    overflow:hidden;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(37,99,235,.16), transparent 60%),
+      radial-gradient(700px 500px at -10% 20%, rgba(14,165,233,.14), transparent 60%);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(37,99,235,.08);
+    border:1px solid rgba(37,99,235,.18);
+    color:var(--primary-dim);
+    padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700;
+    margin-bottom:22px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulseDot 1.8s infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+  .hero h1{
+    font-size:clamp(32px,4.4vw,52px);
+    line-height:1.28;
+    font-weight:900;
+    color:var(--dark);
+    margin:0 0 22px;
+    letter-spacing:-.5px;
+  }
+  .hero h1 .accent-word{
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    font-size:18px;line-height:1.9;color:#475569;max-width:560px;margin:0 0 36px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-trust{display:flex;align-items:center;gap:14px;color:#64748B;font-size:14px;font-weight:600;}
+  .avatars{display:flex;}
+  .avatars span{
+    width:34px;height:34px;border-radius:50%;border:3px solid var(--bg);
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    margin-inline-start:-10px;display:flex;align-items:center;justify-content:center;
+    font-size:11px;color:#fff;font-weight:800;
+  }
+  .avatars span:first-child{margin-inline-start:0;}
+
+  /* Hero signature mockup */
+  .hero-visual{position:relative;perspective:1400px;}
+  .browser-card{
+    position:relative;border-radius:22px;overflow:hidden;
+    background:#0b1220;
+    box-shadow:0 40px 80px -30px rgba(15,23,42,.5), 0 10px 30px -12px rgba(37,99,235,.35);
+    transform:rotateX(6deg) rotateY(-10deg);
+    transition:transform .4s ease-out;
+    will-change:transform;
+  }
+  .browser-bar{
+    display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0F172A;
+  }
+  .browser-bar span{width:10px;height:10px;border-radius:50%;background:#334155;}
+  .browser-bar span:nth-child(1){background:#EF4444;}
+  .browser-bar span:nth-child(2){background:#F59E0B;}
+  .browser-bar span:nth-child(3){background:#22C55E;}
+  .browser-url{
+    margin-inline-start:12px;background:#1e293b;color:#94a3b8;font-size:11.5px;
+    padding:5px 14px;border-radius:8px;flex:1;max-width:220px;font-family:monospace;direction:ltr;text-align:left;
+  }
+  .browser-card img{display:block;width:100%;height:auto;}
+
+  .float-card{
+    position:absolute;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:16px;padding:14px 18px;
+    box-shadow:0 20px 40px -16px rgba(15,23,42,.28);
+    display:flex;align-items:center;gap:10px;
+    animation:floaty 5s ease-in-out infinite;
+  }
+  .float-card .num{font-weight:900;font-size:19px;color:var(--dark);line-height:1;}
+  .float-card .lbl{font-size:11.5px;color:#64748B;font-weight:600;}
+  .float-1{top:-22px;left:-30px;animation-delay:0s;}
+  .float-2{bottom:8px;right:-26px;animation-delay:1.4s;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .reveal-scale{opacity:0;transform:scale(.94);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1);}
+  .reveal-scale.in-view{opacity:1;transform:scale(1);}
+
+  section{padding:100px 0;}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-tag{
+    display:inline-block;color:var(--primary);font-weight:800;font-size:13.5px;letter-spacing:.06em;
+    background:rgba(37,99,235,.08);padding:6px 14px;border-radius:999px;margin-bottom:16px;
+  }
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:900;color:var(--dark);margin:0 0 14px;line-height:1.3;}
+  .section-head p{color:#64748B;font-size:16px;line-height:1.8;margin:0;}
+
+  /* ---------- FEATURES ---------- */
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .feature-card{
+    background:#fff;border:1px solid rgba(15,23,42,.06);
+    border-radius:20px;padding:32px 26px;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    position:relative;overflow:hidden;
+  }
+  .feature-card::before{
+    content:'';position:absolute;inset:0;border-radius:20px;padding:1px;
+    background:linear-gradient(135deg,transparent 40%,rgba(37,99,235,.35));
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    opacity:0;transition:opacity .35s ease;
+  }
+  .feature-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(15,23,42,.22);}
+  .feature-card:hover::before{opacity:1;}
+  .feature-icon{
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(14,165,233,.14));
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--primary);
+  }
+  .feature-card h3{font-size:18px;font-weight:800;color:var(--dark);margin:0 0 10px;}
+  .feature-card p{font-size:14.5px;line-height:1.8;color:#64748B;margin:0;}
+
+  /* ---------- STATS ---------- */
+  .stats-section{
+    background:var(--dark);
+    border-radius:32px;
+    margin:0 24px;
+    position:relative;overflow:hidden;
+  }
+  .stats-section::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(600px 300px at 15% 0%, rgba(37,99,235,.35), transparent 60%),
+               radial-gradient(600px 300px at 85% 100%, rgba(14,165,233,.28), transparent 60%);
+  }
+  .stats-inner{position:relative;padding:74px 24px;}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;text-align:center;
+  }
+  .stat-num{
+    font-size:clamp(32px,4vw,46px);font-weight:900;color:#fff;line-height:1;margin-bottom:10px;
+    background:linear-gradient(135deg,#fff,#93c5fd);-webkit-background-clip:text;background-clip:text;
+  }
+  .stat-num.solid{-webkit-text-fill-color:initial;color:#fff;background:none;}
+  .stat-lbl{color:#94A3B8;font-size:14.5px;font-weight:600;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:18px;
+  }
+  .g-item{
+    position:relative;border-radius:18px;overflow:hidden;cursor:pointer;
+    background:#e2e8f0;
+    box-shadow:0 10px 30px -18px rgba(15,23,42,.3);
+  }
+  .g-item img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .6s cubic-bezier(.2,.7,.3,1);
+    aspect-ratio:3/4;
+  }
+  .g-item:hover img{transform:scale(1.08);}
+  .g-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(15,23,42,.75), transparent 55%);
+    display:flex;align-items:flex-end;padding:18px;
+    opacity:0;transition:opacity .35s ease;
+  }
+  .g-item:hover .g-overlay{opacity:1;}
+  .g-overlay span{color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;}
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed;inset:0;z-index:1000;background:rgba(9,13,26,.94);
+    display:none;align-items:center;justify-content:center;padding:40px;
+    backdrop-filter:blur(6px);
+  }
+  .lightbox.open{display:flex;animation:fadeIn .25s ease;}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  .lightbox img{max-width:min(900px,90vw);max-height:85vh;border-radius:16px;box-shadow:0 40px 80px -20px rgba(0,0,0,.6);}
+  .lightbox-close, .lightbox-nav{
+    position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+    color:#fff;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:background .2s ease;
+  }
+  .lightbox-close:hover, .lightbox-nav:hover{background:rgba(255,255,255,.2);}
+  .lightbox-close{top:26px;left:26px;}
+  .lightbox-nav.prev{right:26px;top:50%;transform:translateY(-50%);}
+  .lightbox-nav.next{left:26px;top:50%;transform:translateY(-50%);}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative;max-width:880px;margin:0 auto;}
+  .timeline::before{
+    content:'';position:absolute;top:0;bottom:0;right:31px;width:2px;
+    background:linear-gradient(to bottom, rgba(37,99,235,.5), rgba(14,165,233,.15));
+  }
+  .t-step{display:flex;gap:26px;padding-bottom:52px;position:relative;}
+  .t-step:last-child{padding-bottom:0;}
+  .t-num{
+    flex-shrink:0;width:64px;height:64px;border-radius:18px;
+    background:#fff;border:1.5px solid rgba(37,99,235,.18);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:22px;color:var(--primary);
+    box-shadow:0 14px 26px -14px rgba(37,99,235,.4);
+    position:relative;z-index:1;
+  }
+  .t-content{padding-top:10px;}
+  .t-content h3{font-size:18.5px;font-weight:800;color:var(--dark);margin:0 0 8px;}
+  .t-content p{color:#64748B;font-size:14.5px;line-height:1.8;margin:0;max-width:520px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-wrap{position:relative;max-width:760px;margin:0 auto;}
+  .testi-track{position:relative;min-height:220px;}
+  .testi-card{
+    position:absolute;inset:0;
+    background:#fff;border:1px solid rgba(15,23,42,.06);
+    border-radius:24px;padding:44px 40px;text-align:center;
+    box-shadow:0 24px 50px -28px rgba(15,23,42,.25);
+    opacity:0;transform:translateY(14px) scale(.98);
+    transition:opacity .5s ease, transform .5s ease;
+    pointer-events:none;
+  }
+  .testi-card.active{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+  .stars{color:var(--accent);font-size:18px;letter-spacing:3px;margin-bottom:16px;}
+  .testi-card p.quote{font-size:18px;line-height:1.85;color:var(--dark);font-weight:600;margin:0 0 22px;}
+  .testi-person{display:flex;align-items:center;justify-content:center;gap:12px;}
+  .testi-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;
+  }
+  .testi-name{font-weight:800;font-size:14.5px;color:var(--dark);}
+  .testi-role{font-size:12.5px;color:#94a3b8;}
+  .testi-dots{display:flex;justify-content:center;gap:8px;margin-top:28px;}
+  .testi-dots button{
+    width:9px;height:9px;border-radius:50%;border:none;background:#cbd5e1;cursor:pointer;
+    transition:background .3s ease, width .3s ease;padding:0;
+  }
+  .testi-dots button.active{background:var(--primary);width:26px;border-radius:6px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{
+    background:#fff;border:1px solid rgba(15,23,42,.07);border-radius:16px;overflow:hidden;
+    transition:border-color .25s ease;
+  }
+  .faq-item.open{border-color:rgba(37,99,235,.35);}
+  .faq-q{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 24px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--dark);
+    background:none;border:none;width:100%;text-align:right;font-family:inherit;
+  }
+  .faq-q .chev{transition:transform .3s ease;flex-shrink:0;color:var(--primary);}
+  .faq-item.open .faq-q .chev{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-a p{margin:0;padding:0 24px 22px;color:#64748B;font-size:14.5px;line-height:1.85;}
+
+  /* ---------- CTA ---------- */
+  .cta-section{
+    position:relative;margin:0 24px;border-radius:32px;overflow:hidden;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    padding:80px 40px;text-align:center;
+  }
+  .cta-section::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(500px 300px at 90% -10%, rgba(255,255,255,.25), transparent 60%);
+  }
+  .cta-section h2{position:relative;color:#fff;font-size:clamp(26px,3.6vw,40px);font-weight:900;margin:0 0 16px;}
+  .cta-section p{position:relative;color:rgba(255,255,255,.9);font-size:16.5px;margin:0 0 34px;}
+  .btn-white{background:#fff;color:var(--primary-dim);box-shadow:0 16px 34px -14px rgba(15,23,42,.4);}
+  .btn-white:hover{transform:translateY(-3px) scale(1.02);}
+
+  /* ---------- FORM ---------- */
+  .form-section{background:#fff;}
+  .form-wrap{
+    max-width:680px;margin:0 auto;background:var(--bg);
+    border:1px solid rgba(15,23,42,.06);border-radius:28px;padding:48px;
+    box-shadow:0 30px 60px -34px rgba(15,23,42,.2);
+  }
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:13.5px;font-weight:700;color:var(--dark);}
+  .field input, .field select, .field textarea{
+    border:1.5px solid rgba(15,23,42,.12);border-radius:12px;padding:13px 16px;
+    font-family:inherit;font-size:14.5px;background:#fff;color:var(--text);
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color:var(--primary);box-shadow:0 0 0 4px rgba(37,99,235,.12);outline:none;
+  }
+  .field textarea{resize:vertical;min-height:110px;}
+  .form-submit{width:100%;justify-content:center;margin-top:6px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--dark);color:#94A3B8;padding:60px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:18px;margin-bottom:14px;}
+  footer p{font-size:14px;line-height:1.8;max-width:320px;}
+  .footer-col h4{color:#fff;font-size:14.5px;font-weight:700;margin:0 0 16px;}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-col a{color:#94A3B8;text-decoration:none;font-size:14px;transition:color .2s ease;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);padding-top:24px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    font-size:13px;color:#64748B;
+  }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .wa-float{
+    position:fixed;bottom:26px;left:26px;z-index:200;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(37,211,102,.6);
+    text-decoration:none;
+    animation:waPulse 2.6s infinite;
+  }
+  @keyframes waPulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.55), 0 14px 30px -8px rgba(37,211,102,.6);}
+    70%{box-shadow:0 0 0 14px rgba(37,211,102,0), 0 14px 30px -8px rgba(37,211,102,.6);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0), 0 14px 30px -8px rgba(37,211,102,.6);}
+  }
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  @media (max-width:960px){
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero{padding-top:130px;}
+    .hero-visual{max-width:440px;margin:60px auto 0;}
+    .features-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:32px;}
+    .gallery-grid{grid-template-columns:repeat(3,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:620px){
+    section{padding:70px 0;}
+    .features-grid{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .form-grid{grid-template-columns:1fr;}
+    .form-wrap{padding:30px 22px;}
+    .footer-grid{grid-template-columns:1fr;}
+    .cta-section{padding:56px 24px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .browser-card{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="mainNav">
+  <div class="container nav-inner">
+    <div class="logo">
+      <span class="logo-mark"><img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785521585/image-Photoroom_is12su.png" alt="شعار بورتفوليو برو" loading="lazy"></span>
+      بورتفوليو برو
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">المميزات</a></li>
+      <li><a href="#gallery">أعمالنا</a></li>
+      <li><a href="#process">آلية العمل</a></li>
+      <li><a href="#testimonials">آراء العملاء</a></li>
+      <li><a href="#faq">الأسئلة الشائعة</a></li>
+    </ul>
+    <a class="nav-cta" href="#form" aria-label="ابدأ الآن">
+      ابدأ الآن
+    </a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="reveal in-view">
+      <span class="eyebrow"><span class="dot"></span> بورتفوليو مخصص لكل عميل، بدون قوالب جاهزة</span>
+      <h1>احصل على <span class="accent-word">بورتفوليو احترافي</span> يعكس خبرتك ويزيد فرص عملك</h1>
+      <p class="lead">نصمم لك Portfolio احترافي بالكامل، مخصص حسب مجالك وشخصيتك، مع تصميم عصري يساعدك على جذب العملاء أو الحصول على وظيفة أحلامك.</p>
+      <div class="hero-actions">
+        <a href="#form" class="btn btn-primary btn-big">
+          ابدأ الآن
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M14 6l-6 6 6 6"/></svg>
+        </a>
+        <a href="#gallery" class="btn btn-ghost btn-big">
+          شاهد الأعمال
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="avatars">
+          <span>A</span><span>M</span><span>S</span><span>+</span>
+        </div>
+        انضم إلى أكثر من 500 عميل حصلوا على بورتفوليو مميز
+      </div>
+    </div>
+
+    <div class="hero-visual reveal in-view" id="heroVisual">
+      <div class="browser-card" id="browserCard">
+        <div class="browser-bar">
+          <span></span><span></span><span></span>
+          <div class="browser-url">yourname-portfolio.com</div>
+        </div>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785520491/5db3a9dc-92aa-420d-ba3b-1467eca13d31.png" alt="معاينة تصميم بورتفوليو احترافي" loading="lazy">
+      </div>
+      <div class="float-card float-1">
+        <div>
+          <div class="num">98%</div>
+          <div class="lbl">رضا العملاء</div>
+        </div>
+      </div>
+      <div class="float-card float-2">
+        <div>
+          <div class="num">24 ساعة</div>
+          <div class="lbl">بدء التنفيذ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">المميزات</span>
+      <h2>كل ما تحتاجه لبورتفوليو يترك انطباعاً قوياً</h2>
+      <p>نهتم بكل تفصيلة، من الفكرة الأولى حتى التسليم النهائي، لنمنحك حضوراً رقمياً يليق بمستواك المهني.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>تصميم مخصص بالكامل</h3>
+        <p>لا قوالب جاهزة. كل بورتفوليو يُصمم من الصفر ليعكس مجالك وشخصيتك المهنية بدقة.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>متوافق مع الجوال</h3>
+        <p>يظهر بورتفوليوك بشكل مثالي على جميع الأجهزة، من الجوال إلى الشاشات الكبيرة.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>سرعة تحميل عالية</h3>
+        <p>كود نظيف ومحسّن يضمن فتح الصفحة بسرعة، ما يمنع فقدان أي زائر أو فرصة عمل.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.5L21 9l-5 4.6L17.5 21 12 17.3 6.5 21 8 13.6 3 9l6.6-.5z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>تصميم حديث 2026</h3>
+        <p>أحدث اتجاهات التصميم العالمية، بلمسات فاخرة تنافس أفضل مواقع وكالات التصميم.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </div>
+        <h3>إمكانية التعديل</h3>
+        <p>نمنحك المرونة لتحديث أعمالك ومحتواك بسهولة كلما أضفت مشروعاً جديداً.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>تسليم سريع</h3>
+        <p>نلتزم بجداول زمنية واضحة، لتحصل على بورتفوليوك جاهزاً دون انتظار طويل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section aria-label="لماذا نحن" style="padding:0 0 100px;">
+  <div class="stats-section reveal-scale">
+    <div class="stats-inner">
+      <div class="section-head" style="margin-bottom:44px;">
+        <span class="section-tag" style="background:rgba(255,255,255,.1);color:#93c5fd;">لماذا نحن؟</span>
+        <h2 style="color:#fff;">أرقام تتحدث عن خبرتنا</h2>
+      </div>
+      <div class="stats-grid">
+        <div>
+          <div class="stat-num" data-count="500" data-suffix="+">0</div>
+          <div class="stat-lbl">Portfolio تم تصميمه</div>
+        </div>
+        <div>
+          <div class="stat-num" data-count="98" data-suffix="%">0</div>
+          <div class="stat-lbl">رضا العملاء</div>
+        </div>
+        <div>
+          <div class="stat-num solid" data-count="24" data-suffix=" ساعة">0</div>
+          <div class="stat-lbl">متوسط بدء التنفيذ</div>
+        </div>
+        <div>
+          <div class="stat-num" data-count="5" data-suffix=" سنوات">0</div>
+          <div class="stat-lbl">خبرة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">معرض الأعمال</span>
+      <h2>نماذج من بورتفوليوهات صممناها لعملائنا</h2>
+      <p>كل تصميم يحكي قصة مختلفة، ويعكس مجال ومهارات صاحبه بأسلوب بصري مميز.</p>
+    </div>
+
+    <div class="gallery-grid reveal" id="galleryGrid">
+      <div class="g-item" data-index="0">
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785520408/533ec3c8-a999-4cf2-95c9-91ce254c5cea.png" alt="نموذج بورتفوليو 1" loading="lazy">
+        <div class="g-overlay"><span>عرض التصميم <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg></span></div>
+      </div>
+      <div class="g-item" data-index="1">
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785520428/c00b9c5b-9863-4bac-8575-c34ac544e395_ww7ore.png" alt="نموذج بورتفوليو 2" loading="lazy">
+        <div class="g-overlay"><span>عرض التصميم <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg></span></div>
+      </div>
+      <div class="g-item" data-index="2">
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785520439/33534507-975a-4de4-8a44-e8a767c6038b_rufrhk.png" alt="نموذج بورتفوليو 3" loading="lazy">
+        <div class="g-overlay"><span>عرض التصميم <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg></span></div>
+      </div>
+      <div class="g-item" data-index="3">
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785520491/5db3a9dc-92aa-420d-ba3b-1467eca13d31.png" alt="نموذج بورتفوليو 4" loading="lazy">
+        <div class="g-overlay"><span>عرض التصميم <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg></span></div>
+      </div>
+      <div class="g-item" data-index="4">
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785520771/ab4d353a-f2af-4888-83bf-bc7c3fa60122.png" alt="نموذج بورتفوليو 5" loading="lazy">
+        <div class="g-overlay"><span>عرض التصميم <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS / TIMELINE ================= -->
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">كيف نعمل؟</span>
+      <h2>رحلة واضحة من الفكرة حتى الاستلام</h2>
+      <p>أربع خطوات بسيطة تفصلك عن بورتفوليو احترافي جاهز للاستخدام.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="t-step">
+        <div class="t-num">1</div>
+        <div class="t-content">
+          <h3>ترسل لنا بياناتك</h3>
+          <p>تشاركنا معلوماتك ومجال عملك وأعمالك السابقة عبر نموذج بسيط أو محادثة مباشرة.</p>
+        </div>
+      </div>
+      <div class="t-step">
+        <div class="t-num">2</div>
+        <div class="t-content">
+          <h3>نناقش التصميم المناسب</h3>
+          <p>نحدد معاً الأسلوب والألوان والهيكل الذي يعكس شخصيتك المهنية بأفضل شكل.</p>
+        </div>
+      </div>
+      <div class="t-step">
+        <div class="t-num">3</div>
+        <div class="t-content">
+          <h3>نقوم بتصميم البورتفوليو</h3>
+          <p>فريقنا يبدأ التنفيذ الفعلي، مع مراجعات دورية لضمان مطابقة رؤيتك تماماً.</p>
+        </div>
+      </div>
+      <div class="t-step">
+        <div class="t-num">4</div>
+        <div class="t-content">
+          <h3>تستلم النسخة النهائية</h3>
+          <p>تحصل على بورتفوليو جاهز، سريع، ومتوافق مع جميع الأجهزة، بلمسة أخيرة معك.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">آراء العملاء</span>
+      <h2>قصص نجاح حقيقية من عملائنا</h2>
+      <p>لسنا نحن من نقول ذلك، بل عملاؤنا الذين حصلوا على نتائج ملموسة.</p>
+    </div>
+
+    <div class="testi-wrap reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card active">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"التعامل كان ممتاز والتصميم فاق توقعاتي، شعرت أن الفريق يفهم مجالي تماماً."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">سارة أحمد</div>
+              <div class="testi-role">مصممة جرافيك</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"أفضل استثمار عملته لبناء هويتي المهنية، البورتفوليو غيّر طريقة تقديم نفسي للعملاء."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">محمد العتيبي</div>
+              <div class="testi-role">مطور واجهات أمامية</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"خلال أسبوع واحد فقط وصلتني عروض عمل جديدة، بسبب البورتفوليو الاحترافي الذي صمموه لي."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">رنا الحربي</div>
+              <div class="testi-role">مسوّقة رقمية</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">الأسئلة الشائعة</span>
+      <h2>كل ما تريد معرفته قبل البدء</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          هل التصميم مخصص فعلاً لكل عميل؟
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>نعم، كل بورتفوليو نصممه من الصفر بناءً على مجالك وأعمالك وشخصيتك المهنية، دون استخدام قوالب جاهزة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          هل يمكن التعديل على التصميم لاحقاً؟
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>بالتأكيد، نمنحك إمكانية تحديث المحتوى والأعمال بسهولة في أي وقت بعد التسليم.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          كم تستغرق مدة التنفيذ؟
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>يبدأ التنفيذ خلال 24 ساعة من التواصل، وتختلف المدة الإجمالية حسب حجم المشروع وتفاصيله.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          هل يدعم التصميم اللغة العربية والإنجليزية؟
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>نعم، نصمم بورتفوليوهات تدعم اللغتين مع مراعاة كاملة لاتجاه الكتابة والتنسيق المناسب لكل لغة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          هل يمكن إضافة أعمال جديدة مستقبلاً؟
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>نعم، البورتفوليو مبني بطريقة مرنة تسمح لك بإضافة مشاريع وأعمال جديدة بسهولة كلما أردت.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ما هي طرق الدفع المتاحة؟
+          <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a"><p>نوفر عدة طرق دفع مرنة، وسنتفق معك على التفاصيل والدفعات مباشرة عند التواصل عبر واتساب.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section style="padding:0 0 100px;">
+  <div class="cta-section reveal-scale">
+    <h2>جاهز للحصول على Portfolio احترافي؟</h2>
+    <p>تواصل معنا الآن وابدأ رحلة بناء حضورك المهني في دقائق معدودة.</p>
+    <a class="btn btn-white btn-big" href="https://wa.me/201095676056?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.9 8.9 0 0012 4a8.9 8.9 0 00-7.7 13.4L3 21l3.7-1.2A8.9 8.9 0 0012 21a8.9 8.9 0 006.3-15.3zM12 19.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.9.9-2.6-.2-.3A7.3 7.3 0 1119.3 12 7.3 7.3 0 0112 19.3zm4-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.5.1-.5.7-.7.8-.3.2-.5.1a6 6 0 01-1.8-1.1 6.8 6.8 0 01-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4c.1-.1.1-.2.2-.4a.4.4 0 000-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.7 2.7 0 00-.8 2 4.7 4.7 0 001 2.4 10.6 10.6 0 004.1 3.6c.6.2 1 .4 1.4.5a2.3 2.3 0 001.5-.1 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c0-.1-.2-.2-.4-.3z"/></svg>
+      ابدأ الآن عبر واتساب
+    </a>
+  </div>
+</section>
+
+<!-- ================= FORM ================= -->
+<section class="form-section" id="form">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">تواصل معنا</span>
+      <h2>أخبرنا عن مشروعك</h2>
+      <p>املأ البيانات وسيتم تحويلك مباشرة إلى واتساب مع رسالتك جاهزة للإرسال.</p>
+    </div>
+
+    <form class="form-wrap reveal" id="leadForm" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="fname">الاسم</label>
+          <input id="fname" name="fname" type="text" placeholder="اسمك الكامل" required>
+        </div>
+        <div class="field">
+          <label for="fphone">رقم الهاتف</label>
+          <input id="fphone" name="fphone" type="tel" placeholder="01xxxxxxxxx" required>
+        </div>
+        <div class="field">
+          <label for="femail">البريد الإلكتروني</label>
+          <input id="femail" name="femail" type="email" placeholder="example@email.com" required>
+        </div>
+        <div class="field">
+          <label for="fspecialty">التخصص</label>
+          <select id="fspecialty" name="fspecialty" required>
+            <option value="" disabled selected>اختر تخصصك</option>
+            <option value="مصمم جرافيك">مصمم جرافيك</option>
+            <option value="مطور برمجيات">مطور برمجيات</option>
+            <option value="مسوّق رقمي">مسوّق رقمي</option>
+            <option value="كاتب محتوى">كاتب محتوى</option>
+            <option value="مصور فوتوغرافي">مصور فوتوغرافي</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="fmessage">رسالتك</label>
+          <textarea id="fmessage" name="fmessage" placeholder="أخبرنا أكثر عن مشروعك واحتياجاتك..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">
+        إرسال عبر واتساب
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.9 8.9 0 0012 4a8.9 8.9 0 00-7.7 13.4L3 21l3.7-1.2A8.9 8.9 0 0012 21a8.9 8.9 0 006.3-15.3zM12 19.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.9.9-2.6-.2-.3A7.3 7.3 0 1119.3 12 7.3 7.3 0 0112 19.3z"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="logo-mark"><img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785521585/image-Photoroom_is12su.png" alt="شعار بورتفوليو برو" loading="lazy"></span> بورتفوليو برو</div>
+        <p>نساعد المستقلين والمحترفين على بناء حضور رقمي يعكس مهاراتهم الحقيقية ويفتح لهم أبواب فرص جديدة.</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#gallery">أعمالنا</a></li>
+          <li><a href="#process">آلية العمل</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="https://wa.me/201095676056" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="#form">نموذج التواصل</a></li>
+          <li><a href="#" onclick="return false;">سياسة الخصوصية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 بورتفوليو برو. جميع الحقوق محفوظة.</span>
+      <span>صُمم بعناية لعملائنا المحترفين</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a class="wa-float" href="https://wa.me/201095676056" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.6 6.3A8.9 8.9 0 0012 4a8.9 8.9 0 00-7.7 13.4L3 21l3.7-1.2A8.9 8.9 0 0012 21a8.9 8.9 0 006.3-15.3zM12 19.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.9.9-2.6-.2-.3A7.3 7.3 0 1119.3 12 7.3 7.3 0 0112 19.3zm4-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.5.1-.5.7-.7.8-.3.2-.5.1a6 6 0 01-1.8-1.1 6.8 6.8 0 01-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4c.1-.1.1-.2.2-.4a.4.4 0 000-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.7 2.7 0 00-.8 2 4.7 4.7 0 001 2.4 10.6 10.6 0 004.1 3.6c.6.2 1 .4 1.4.5a2.3 2.3 0 001.5-.1 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c0-.1-.2-.2-.4-.3z"/></svg>
+</a>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="إغلاق"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lightbox-nav next" id="lbNext" aria-label="الصورة التالية"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <img id="lbImg" src="" alt="عرض مكبر لتصميم البورتفوليو">
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="الصورة السابقة"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<script>
+(function(){
+  // NAV scroll state
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Hero 3D tilt on mouse move (desktop only)
+  const heroVisual = document.getElementById('heroVisual');
+  const browserCard = document.getElementById('browserCard');
+  if (window.matchMedia('(min-width:961px)').matches){
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      browserCard.style.transform = `rotateX(${6 - y*10}deg) rotateY(${-10 + x*16}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => {
+      browserCard.style.transform = 'rotateX(6deg) rotateY(-10deg)';
+    });
+  }
+
+  // Animated counters
+  const counters = document.querySelectorAll('.stat-num');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1600;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => counterIO.observe(c));
+
+  // Gallery lightbox
+  const galleryImages = Array.from(document.querySelectorAll('#galleryGrid img')).map(img => img.src);
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  let currentIndex = 0;
+
+  function openLightbox(idx){
+    currentIndex = idx;
+    lbImg.src = galleryImages[currentIndex];
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function showImage(delta){
+    currentIndex = (currentIndex + delta + galleryImages.length) % galleryImages.length;
+    lbImg.src = galleryImages[currentIndex];
+  }
+
+  document.querySelectorAll('.g-item').forEach(item => {
+    item.addEventListener('click', () => openLightbox(parseInt(item.getAttribute('data-index'), 10)));
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbNext').addEventListener('click', () => showImage(1));
+  document.getElementById('lbPrev').addEventListener('click', () => showImage(-1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showImage(-1); // RTL: right = previous visually
+    if (e.key === 'ArrowLeft') showImage(1);
+  });
+
+  // Testimonials slider
+  const testiCards = document.querySelectorAll('.testi-card');
+  const testiDots = document.getElementById('testiDots');
+  let testiIndex = 0;
+
+  testiCards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', 'رأي عميل ' + (i+1));
+    dot.addEventListener('click', () => goToTesti(i));
+    testiDots.appendChild(dot);
+  });
+
+  function goToTesti(i){
+    testiCards[testiIndex].classList.remove('active');
+    testiDots.children[testiIndex].classList.remove('active');
+    testiIndex = i;
+    testiCards[testiIndex].classList.add('active');
+    testiDots.children[testiIndex].classList.add('active');
+  }
+
+  let testiTimer = setInterval(() => {
+    goToTesti((testiIndex + 1) % testiCards.length);
+  }, 4500);
+
+  document.getElementById('testiTrack').addEventListener('mouseenter', () => clearInterval(testiTimer));
+  document.getElementById('testiTrack').addEventListener('mouseleave', () => {
+    testiTimer = setInterval(() => { goToTesti((testiIndex + 1) % testiCards.length); }, 4500);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Form -> WhatsApp redirect
+  const leadForm = document.getElementById('leadForm');
+  leadForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const specialty = document.getElementById('fspecialty').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+
+    if (!name || !phone || !email || !specialty){
+      alert('من فضلك أكمل جميع الحقول المطلوبة.');
+      return;
+    }
+
+    const text =
+`مرحباً، أرغب في طلب تصميم بورتفوليو احترافي.
+
+الاسم: ${name}
+الهاتف: ${phone}
+البريد: ${email}
+التخصص: ${specialty}
+الرسالة: ${message || 'لا يوجد'}`;
+
+    const waLink = 'https://wa.me/201095676056?text=' + encodeURIComponent(text);
+    window.open(waLink, '_blank');
+    leadForm.reset();
+  });
+})();
+</script>
+
+</body>
+</html>
