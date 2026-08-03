@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تصميم بروفايل شركات احترافي (Company Profile) | يعكس هوية شركتك</title>
+<meta name="description" content="نصمم بروفايل شركات احترافي متكامل يعكس هوية علامتك التجارية ويقنع عملاءك ومستثمريك من أول نظرة. تصميم مخصص، جاهز للطباعة والعرض الرقمي. تواصل معنا عبر واتساب.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#5B6CFF;
+    --primary-2:#7C3AED;
+    --secondary:#00D4FF;
+    --accent:#FFB020;
+    --bg:#05070D;
+    --surface:#0C1020;
+    --surface-2:#12172B;
+    --line:rgba(255,255,255,.09);
+    --line-strong:rgba(255,255,255,.16);
+    --text:#F2F4F9;
+    --muted:#8B93A7;
+    --dark:#05070D;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'IBM Plex Sans Arabic','Cairo',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{font-family:'Cairo','IBM Plex Sans Arabic',sans-serif;}
+  ::selection{background:var(--accent);color:#05070D;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:3px solid var(--secondary);outline-offset:2px;border-radius:4px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .nav{position:fixed;top:0;right:0;left:0;z-index:100;padding:16px 0;transition:all .35s ease;border-bottom:1px solid transparent;}
+  .nav.scrolled{
+    background:rgba(5,7,13,.75);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:var(--text);letter-spacing:.02em;}
+  .logo::before{content:'';width:9px;height:9px;background:var(--accent);display:inline-block;box-shadow:0 0 12px var(--accent);}
+  .logo-mark{width:38px;height:38px;border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .logo-mark img{width:100%;height:100%;object-fit:contain;display:block;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;transition:color .2s ease;position:relative;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    display:flex;align-items:center;gap:8px;background:var(--accent);color:#05070D;padding:11px 22px;border-radius:2px;
+    font-weight:800;font-size:14px;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 0 0 1px rgba(255,176,32,.4);
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px -6px rgba(255,176,32,.6);}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:15px;
+    padding:17px 30px;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid transparent;
+    transition:transform .25s cubic-bezier(.2,.9,.3,1), box-shadow .25s ease, background .25s ease, border-color .25s ease;
+    white-space:nowrap;letter-spacing:.01em;
+  }
+  .btn-primary{background:var(--accent);color:#05070D;box-shadow:0 0 0 1px rgba(255,176,32,.5), 0 16px 34px -18px rgba(255,176,32,.7);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(255,176,32,.7), 0 20px 40px -16px rgba(255,176,32,.85);}
+  .btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line-strong);}
+  .btn-ghost:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.3);transform:translateY(-2px);}
+  .btn-big{padding:21px 42px;font-size:17px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;padding:170px 0 110px;overflow:hidden;
+    background:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+      radial-gradient(800px 460px at 88% -8%, rgba(124,58,237,.28), transparent 60%),
+      radial-gradient(700px 500px at -8% 30%, rgba(0,212,255,.14), transparent 60%);
+    background-size:44px 44px, 44px 44px, 100% 100%, 100% 100%;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line-strong);
+    color:var(--muted);padding:8px 16px;border-radius:2px;font-size:13px;font-weight:700;margin-bottom:26px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulseDot 1.8s infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.35;}}
+  .hero h1{font-size:clamp(32px,4.6vw,56px);line-height:1.18;font-weight:900;color:var(--text);margin:0 0 24px;letter-spacing:-1px;}
+  .hero h1 .accent-word{color:var(--accent);position:relative;}
+  .hero p.lead{font-size:18px;line-height:1.9;color:var(--muted);max-width:560px;margin:0 0 38px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+  .hero-trust{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px;font-weight:600;flex-wrap:wrap;}
+  .client-logos{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:800;font-size:12.5px;color:var(--muted);}
+  .client-logos span{padding:7px 13px;border:1px solid var(--line);border-radius:2px;background:var(--surface);}
+
+  .hero-visual{position:relative;perspective:1400px;}
+  .browser-card{
+    position:relative;border-radius:6px;overflow:hidden;background:var(--surface);border:1px solid var(--line-strong);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.7), 0 0 60px -20px rgba(124,58,237,.35);
+    transform:rotateX(6deg) rotateY(-10deg);transition:transform .4s ease-out;will-change:transform;
+  }
+  .browser-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#080a13;border-bottom:1px solid var(--line);}
+  .browser-bar span{width:9px;height:9px;border-radius:50%;background:#2a2f3f;}
+  .browser-bar span:nth-child(1){background:#FF5F56;}
+  .browser-bar span:nth-child(2){background:#FFBD2E;}
+  .browser-bar span:nth-child(3){background:#27C93F;}
+  .browser-url{margin-inline-start:12px;background:#161b2e;color:var(--muted);font-size:11px;padding:5px 14px;border-radius:2px;flex:1;max-width:240px;font-family:monospace;direction:ltr;text-align:left;}
+  .browser-card img{display:block;width:100%;height:auto;}
+  .float-card{
+    position:absolute;background:rgba(12,16,32,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--line-strong);border-radius:4px;padding:14px 18px;box-shadow:0 20px 44px -16px rgba(0,0,0,.6);
+    display:flex;align-items:center;gap:10px;animation:floaty 5s ease-in-out infinite;
+  }
+  .float-card .num{font-weight:900;font-size:19px;color:var(--accent);line-height:1;}
+  .float-card .lbl{font-size:11px;color:var(--muted);font-weight:600;}
+  .float-1{top:-22px;left:-30px;animation-delay:0s;}
+  .float-2{bottom:8px;right:-26px;animation-delay:1.4s;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .reveal-scale{opacity:0;transform:scale(.94);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1);}
+  .reveal-scale.in-view{opacity:1;transform:scale(1);}
+
+  section{padding:110px 0;scroll-margin-top:90px;}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-tag{display:inline-block;color:var(--accent);font-weight:800;font-size:13px;letter-spacing:.12em;background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:2px;margin-bottom:18px;font-family:monospace;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);font-weight:900;color:var(--text);margin:0 0 14px;line-height:1.25;letter-spacing:-.5px;}
+  .section-head p{color:var(--muted);font-size:16px;line-height:1.8;margin:0;}
+
+  /* ---------- FEATURES ---------- */
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .feature-card{
+    background:var(--surface);padding:36px 28px;
+    transition:background .3s ease;position:relative;overflow:hidden;
+  }
+  .feature-card::before{
+    content:'';position:absolute;top:0;right:0;width:0;height:2px;background:var(--accent);transition:width .35s ease;
+  }
+  .feature-card:hover{background:var(--surface-2);}
+  .feature-card:hover::before{width:100%;}
+  .feature-icon{width:50px;height:50px;border-radius:2px;background:rgba(255,176,32,.08);border:1px solid rgba(255,176,32,.25);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent);}
+  .feature-card h3{font-size:18px;font-weight:800;color:var(--text);margin:0 0 10px;}
+  .feature-card p{font-size:14.5px;line-height:1.8;color:var(--muted);margin:0;}
+
+  /* ---------- STATS ---------- */
+  .stats-section{background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;margin:0 24px;position:relative;overflow:hidden;}
+  .stats-section::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(600px 300px at 15% 0%, rgba(124,58,237,.22), transparent 60%),
+               radial-gradient(600px 300px at 85% 100%, rgba(0,212,255,.16), transparent 60%);
+  }
+  .stats-inner{position:relative;padding:74px 24px;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;text-align:center;}
+  .stats-grid > div{border-right:1px solid var(--line);}
+  .stats-grid > div:last-child{border-right:none;}
+  .stat-num{
+    font-size:clamp(34px,4.2vw,48px);font-weight:900;color:var(--accent);line-height:1;margin-bottom:10px;font-family:monospace;
+  }
+  .stat-num.solid{color:var(--secondary);}
+  .stat-lbl{color:var(--muted);font-size:14px;font-weight:600;}
+
+  /* ---------- CLIENT WORK GRID ---------- */
+  .clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .client-card{
+    position:relative;overflow:hidden;background:var(--surface);text-decoration:none;display:block;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1);
+  }
+  .client-card:hover{transform:translateY(-4px);z-index:2;box-shadow:0 30px 50px -20px rgba(0,0,0,.7);}
+  .client-card img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/4;filter:grayscale(35%) contrast(1.05);transition:transform .6s cubic-bezier(.2,.7,.3,1), filter .4s ease;}
+  .client-card:hover img{transform:scale(1.06);filter:grayscale(0%) contrast(1.05);}
+  .client-overlay{
+    position:absolute;inset:0;background:linear-gradient(to top, rgba(5,7,13,.95) 0%, rgba(5,7,13,.4) 45%, transparent 70%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:20px;
+  }
+  .client-name{color:#fff;font-weight:800;font-size:15.5px;margin-bottom:8px;}
+  .client-link-row{display:flex;align-items:center;gap:8px;color:var(--accent);font-size:12px;font-weight:700;
+    opacity:0;transform:translateY(6px);transition:opacity .3s ease, transform .3s ease;}
+  .client-card:hover .client-link-row{opacity:1;transform:translateY(0);}
+  .client-badge{
+    position:absolute;top:14px;left:14px;background:rgba(5,7,13,.85);border:1px solid var(--line-strong);
+    color:var(--text);font-size:10.5px;font-weight:800;padding:5px 10px;border-radius:2px;display:flex;align-items:center;gap:5px;
+  }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative;max-width:880px;margin:0 auto;}
+  .timeline::before{content:'';position:absolute;top:0;bottom:0;right:31px;width:1px;background:var(--line-strong);}
+  .t-step{display:flex;gap:26px;padding-bottom:52px;position:relative;}
+  .t-step:last-child{padding-bottom:0;}
+  .t-num{
+    flex-shrink:0;width:64px;height:64px;border-radius:2px;background:var(--surface);border:1px solid var(--line-strong);
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:var(--accent);font-family:monospace;
+    position:relative;z-index:1;
+  }
+  .t-content{padding-top:10px;}
+  .t-content h3{font-size:18.5px;font-weight:800;color:var(--text);margin:0 0 8px;}
+  .t-content p{color:var(--muted);font-size:14.5px;line-height:1.8;margin:0;max-width:520px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-wrap{position:relative;max-width:760px;margin:0 auto;}
+  .testi-track{position:relative;min-height:220px;}
+  .testi-card{
+    position:absolute;inset:0;background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:44px 40px;text-align:center;
+    opacity:0;transform:translateY(14px) scale(.98);
+    transition:opacity .5s ease, transform .5s ease;pointer-events:none;
+  }
+  .testi-card.active{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+  .stars{color:var(--accent);font-size:18px;letter-spacing:3px;margin-bottom:16px;}
+  .testi-card p.quote{font-size:18px;line-height:1.85;color:var(--text);font-weight:600;margin:0 0 22px;}
+  .testi-person{display:flex;align-items:center;justify-content:center;gap:12px;}
+  .testi-avatar{width:42px;height:42px;border-radius:2px;background:rgba(255,176,32,.12);border:1px solid rgba(255,176,32,.3);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;font-size:15px;}
+  .testi-name{font-weight:800;font-size:14.5px;color:var(--text);}
+  .testi-role{font-size:12.5px;color:var(--muted);}
+  .testi-dots{display:flex;justify-content:center;gap:8px;margin-top:28px;}
+  .testi-dots button{width:8px;height:8px;border-radius:50%;border:1px solid var(--line-strong);background:transparent;cursor:pointer;transition:background .3s ease, width .3s ease;padding:0;}
+  .testi-dots button.active{background:var(--accent);border-color:var(--accent);width:24px;border-radius:4px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .faq-item{background:var(--surface);overflow:hidden;transition:background .25s ease;}
+  .faq-item.open{background:var(--surface-2);}
+  .faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-weight:700;font-size:15.5px;color:var(--text);background:none;border:none;width:100%;text-align:right;font-family:inherit;}
+  .faq-q .chev{transition:transform .3s ease;flex-shrink:0;color:var(--accent);}
+  .faq-item.open .faq-q .chev{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-a p{margin:0;padding:0 24px 24px;color:var(--muted);font-size:14.5px;line-height:1.85;}
+
+  /* ---------- CTA ---------- */
+  .cta-section{position:relative;margin:0 24px;border-radius:6px;overflow:hidden;background:linear-gradient(135deg,var(--primary-2),var(--primary));padding:84px 40px;text-align:center;border:1px solid var(--line-strong);}
+  .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 300px at 90% -10%, rgba(255,176,32,.3), transparent 60%);}
+  .cta-section h2{position:relative;color:#fff;font-size:clamp(28px,3.8vw,42px);font-weight:900;margin:0 0 16px;letter-spacing:-.5px;}
+  .cta-section p{position:relative;color:rgba(255,255,255,.85);font-size:16.5px;margin:0 0 36px;}
+  .btn-white{background:#fff;color:#05070D;box-shadow:0 16px 34px -14px rgba(0,0,0,.5);}
+  .btn-white:hover{transform:translateY(-3px);}
+
+  /* ---------- FORM ---------- */
+  .form-section{background:var(--bg);}
+  .form-wrap{max-width:680px;margin:0 auto;background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:48px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;min-width:0;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:13px;font-weight:700;color:var(--muted);}
+  .field input, .field select, .field textarea{
+    border:1.5px solid var(--line-strong);border-radius:2px;padding:13px 16px;font-family:inherit;font-size:16px;
+    background:#080a13;color:var(--text);transition:border-color .2s ease, box-shadow .2s ease;width:100%;min-height:50px;
+    -webkit-appearance:none;appearance:none;
+  }
+  .field select{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFB020' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;background-position:left 14px center;background-size:18px;padding-left:42px;cursor:pointer;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,176,32,.15);outline:none;}
+  .field textarea{resize:vertical;min-height:110px;}
+  .form-submit{width:100%;justify-content:center;margin-top:6px;min-height:54px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#03040A;color:var(--muted);padding:60px 0 28px;border-top:1px solid var(--line);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:800;font-size:18px;margin-bottom:14px;}
+  footer p{font-size:14px;line-height:1.8;max-width:320px;}
+  .footer-col h4{color:var(--text);font-size:14px;font-weight:700;margin:0 0 16px;letter-spacing:.04em;}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-col a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .wa-float{
+    position:fixed;bottom:26px;left:26px;z-index:200;width:60px;height:60px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.6);text-decoration:none;
+    animation:waPulse 2.6s infinite;
+  }
+  @keyframes waPulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.55), 0 14px 30px -8px rgba(37,211,102,.6);}
+    70%{box-shadow:0 0 0 14px rgba(37,211,102,0), 0 14px 30px -8px rgba(37,211,102,.6);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0), 0 14px 30px -8px rgba(37,211,102,.6);}
+  }
+
+  @media (max-width:960px){
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero{padding-top:130px;}
+    .hero-visual{max-width:440px;margin:60px auto 0;}
+    .features-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:32px;}
+    .stats-grid > div{border-right:none;}
+    .clients-grid{grid-template-columns:repeat(3,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:620px){
+    section{padding:70px 0;}
+    .features-grid{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .clients-grid{grid-template-columns:repeat(2,1fr);}
+    .form-grid{grid-template-columns:1fr;}
+    .form-wrap{padding:30px 22px;}
+    .footer-grid{grid-template-columns:1fr;}
+    .cta-section{padding:56px 24px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .browser-card{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="mainNav">
+  <div class="container nav-inner">
+    <div class="logo">
+      بروفايل برو للشركات
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">المميزات</a></li>
+      <li><a href="#clients">أعمالنا مع الشركات</a></li>
+      <li><a href="#process">آلية العمل</a></li>
+      <li><a href="#testimonials">آراء عملائنا</a></li>
+      <li><a href="#faq">الأسئلة الشائعة</a></li>
+    </ul>
+    <a class="nav-cta" href="#form" aria-label="اطلب بروفايل شركتك">اطلب الآن</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="reveal in-view">
+      <span class="eyebrow"><span class="dot"></span> بروفايلات شركات صُممت لعشرات القطاعات المختلفة</span>
+      <h1>بروفايل شركة <span class="accent-word">احترافي</span> يعكس هويتك ويقنع عملاءك من أول نظرة</h1>
+      <p class="lead">نصمم بروفايل (Company Profile) متكامل لشركتك، يبرز خدماتك ومشاريعك وقيمك بأسلوب راقٍ يواكب معايير 2026، جاهز لعرضه على العملاء والمستثمرين والجهات الحكومية.</p>
+      <div class="hero-actions">
+        <a href="#form" class="btn btn-primary btn-big">
+          اطلب بروفايل شركتك
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M14 6l-6 6 6 6"/></svg>
+        </a>
+        <a href="#clients" class="btn btn-ghost btn-big">شاهد أعمالنا مع الشركات</a>
+      </div>
+      <div class="hero-trust">
+        <div class="client-logos">
+          <span>الريان</span>
+          <span>Bullivant Arabia</span>
+          <span>روافد العلا</span>
+          <span>OOP Medical</span>
+          <span>+3 أخرى</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <div class="browser-card" id="browserCard">
+        <div class="browser-bar">
+          <span></span><span></span><span></span>
+          <div class="browser-url">company-profile.pdf</div>
+        </div>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785530320/43e124eb-ef85-4d75-b411-3de12ce27bd1.png" alt="معاينة تصميم بروفايل شركة احترافي" loading="lazy">
+      </div>
+      <div class="float-card float-1">
+        <div>
+          <div class="num">+7</div>
+          <div class="lbl">شركات وثقت بنا</div>
+        </div>
+      </div>
+      <div class="float-card float-2">
+        <div>
+          <div class="num">48 ساعة</div>
+          <div class="lbl">بدء التنفيذ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">المميزات</span>
+      <h2>بروفايل شركة يليق بحجم أعمالك</h2>
+      <p>نصمم كل بروفايل بعناية ليكون أداة تسويقية حقيقية تفتح لك أبواب عملاء وشراكات جديدة.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>تصميم مخصص حسب مجال شركتك</h3>
+        <p>لا قوالب جاهزة. نصمم بروفايلك بناءً على طبيعة نشاطك التجاري وجمهورك المستهدف.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12a4 4 0 108 0 4 4 0 00-8 0z"/></svg></div>
+        <h3>هوية بصرية متكاملة ومتناسقة</h3>
+        <p>ألوان وخطوط وعناصر تصميم متناسقة مع هوية شركتك التجارية في كل صفحة.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M8 16h5"/></svg></div>
+        <h3>جاهز للطباعة والعرض الرقمي</h3>
+        <p>ملفات بجودة عالية تصلح للطباعة الفاخرة، وأخرى مضغوطة تناسب المشاركة الرقمية.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.5L21 9l-5 4.6L17.5 21 12 17.3 6.5 21 8 13.6 3 9l6.6-.5z" stroke-linejoin="round"/></svg></div>
+        <h3>يبرز قيمة ومصداقية شركتك</h3>
+        <p>سرد بصري احترافي لإنجازاتك ومشاريعك يبني الثقة لدى العملاء من أول صفحة.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>مراجعات حتى الرضا التام</h3>
+        <p>نراجع التصميم معك خطوة بخطوة، ونعدّل حتى يعكس البروفايل رؤيتك تماماً.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>تسليم بصيغ متعددة</h3>
+        <p>تستلم بروفايلك بصيغ PDF وPPT وصور جاهزة، لاستخدامه في أي موقف يناسبك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section aria-label="لماذا نحن" style="padding:0 0 100px;">
+  <div class="stats-section reveal-scale">
+    <div class="stats-inner">
+      <div class="section-head" style="margin-bottom:44px;">
+        <span class="section-tag" style="background:rgba(255,255,255,.1);color:#93c5fd;">لماذا الشركات تختارنا</span>
+        <h2 style="color:#fff;">أرقام تعكس ثقة عملائنا من الشركات</h2>
+      </div>
+      <div class="stats-grid">
+        <div><div class="stat-num" data-count="7" data-suffix="+">0</div><div class="stat-lbl">شركة وثقت بنا</div></div>
+        <div><div class="stat-num" data-count="99" data-suffix="%">0</div><div class="stat-lbl">رضا العملاء</div></div>
+        <div><div class="stat-num solid" data-count="48" data-suffix=" ساعة">0</div><div class="stat-lbl">متوسط بدء التنفيذ</div></div>
+        <div><div class="stat-num" data-count="7" data-suffix=" سنوات">0</div><div class="stat-lbl">خبرة في تصميم هويات الشركات</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLIENT WORK ================= -->
+<section id="clients">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">أعمالنا مع الشركات</span>
+      <h2>شركات صممنا لها بروفايل احترافي</h2>
+      <p>اضغط على أي عمل لمشاهدة المشروع كاملاً على المنصة الأصلية الخاصة به.</p>
+    </div>
+
+    <div class="clients-grid reveal">
+      <a class="client-card" href="https://drive.google.com/file/d/1_fQku9QgwkDPs_quLGw8hXeE0gu0Vzgo/view?usp=drivesdk" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 20h20L12 2z"/></svg>
+          Drive
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785534624/70438d46-56f0-420a-a10d-f931dc0124ce_yh65cr.png" alt="بروفايل شركة الريان" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">الريان</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="client-card" href="https://www.behance.net/gallery/246816215/bullivant-arabia?platform=direct" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M0 4h10a4 4 0 010 8H0zM0 12h11a4 4 0 010 8H0zM17 8h7M14.5 15a5 5 0 019.6 1.4H14a5 5 0 003.5 4"/></svg>
+          Behance
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785534529/c6f0a4e2-a823-496f-afd5-c2dce3ca4add.png" alt="بروفايل شركة Bullivant Arabia" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">Bullivant Arabia</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="client-card" href="https://drive.google.com/file/d/1KcA3RbdcRGJxercHS-zqDaWTWZF9N7cg/view?usp=drivesdk" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 20h20L12 2z"/></svg>
+          Drive
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785534125/a48b3de0-99e1-4dec-931a-bc0583214fc4.png" alt="بروفايل شركة روافد العلا" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">روافد العلا</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="client-card" href="https://www.behance.net/gallery/246855509/AT-company-profile?platform=direct" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M0 4h10a4 4 0 010 8H0zM0 12h11a4 4 0 010 8H0zM17 8h7M14.5 15a5 5 0 019.6 1.4H14a5 5 0 003.5 4"/></svg>
+          Behance
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785534100/37da72b4-0280-45bf-aca5-c81e08bc659b.png" alt="بروفايل شركة AT" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">AT Company Profile</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="client-card" href="https://www.behance.net/gallery/253609355/OOP-Medical?platform=direct" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M0 4h10a4 4 0 010 8H0zM0 12h11a4 4 0 010 8H0zM17 8h7M14.5 15a5 5 0 019.6 1.4H14a5 5 0 003.5 4"/></svg>
+          Behance
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785533382/38b22461-f9c3-4c6c-be8f-d17e2498d17e.png" alt="بروفايل شركة OOP Medical" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">OOP Medical</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="client-card" href="https://www.behance.net/gallery/253608781/GPA-?share=1" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M0 4h10a4 4 0 010 8H0zM0 12h11a4 4 0 010 8H0zM17 8h7M14.5 15a5 5 0 019.6 1.4H14a5 5 0 003.5 4"/></svg>
+          Behance
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785530320/43e124eb-ef85-4d75-b411-3de12ce27bd1.png" alt="بروفايل شركة GPA" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">GPA</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <a class="client-card" href="https://www.behance.net/gallery/253618065/OOP-Solutions" target="_blank" rel="noopener">
+        <span class="client-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M0 4h10a4 4 0 010 8H0zM0 12h11a4 4 0 010 8H0zM17 8h7M14.5 15a5 5 0 019.6 1.4H14a5 5 0 003.5 4"/></svg>
+          Behance
+        </span>
+        <img src="https://res.cloudinary.com/dp4kyzku8/image/upload/v1785733569/32cc77c5-02f9-4f4f-bc28-66ed11aba30b.png" alt="بروفايل شركة OOP Solutions" loading="lazy">
+        <div class="client-overlay">
+          <div class="client-name">OOP Solutions</div>
+          <div class="client-link-row">عرض المشروع كاملاً
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 3h6v6M10 14L21 3M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1h6"/></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS / TIMELINE ================= -->
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">كيف نعمل؟</span>
+      <h2>رحلة واضحة من الفكرة حتى التسليم</h2>
+      <p>أربع خطوات بسيطة تفصل شركتك عن بروفايل احترافي جاهز للاستخدام.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="t-step">
+        <div class="t-num">1</div>
+        <div class="t-content"><h3>ترسل لنا بيانات شركتك</h3><p>تشاركنا نشاط شركتك وخدماتها ومحتواها الحالي، سواء كان جاهزاً أو يحتاج صياغة.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-num">2</div>
+        <div class="t-content"><h3>نحلل الهوية ونقترح التصميم</h3><p>ندرس هوية شركتك وجمهورها المستهدف، ونقترح الأسلوب والهيكل الأنسب للبروفايل.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-num">3</div>
+        <div class="t-content"><h3>نصمم البروفايل الكامل</h3><p>فريقنا ينفذ التصميم كاملاً مع مراجعات دورية معك لضمان مطابقة رؤيتك تماماً.</p></div>
+      </div>
+      <div class="t-step">
+        <div class="t-num">4</div>
+        <div class="t-content"><h3>تستلم النسخة النهائية</h3><p>تحصل على بروفايل جاهز للطباعة والعرض الرقمي، بصيغ متعددة تناسب كل استخدام.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">آراء عملائنا</span>
+      <h2>قصص نجاح حقيقية مع الشركات</h2>
+      <p>هذا ما شاركنا به بعض ممثلي الشركات التي صممنا لها بروفايل احترافي.</p>
+    </div>
+    <div class="testi-wrap reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card active">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"البروفايل رفع مستوى عروضنا التقديمية أمام العملاء، والفريق كان محترف في كل خطوة."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">M</div>
+            <div><div class="testi-name">مدير تسويق</div><div class="testi-role">قطاع المقاولات</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"التزموا بالمواعيد وفهموا طبيعة نشاطنا بسرعة، النتيجة عكست هوية شركتنا تماماً."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">A</div>
+            <div><div class="testi-name">المدير العام</div><div class="testi-role">قطاع الخدمات الطبية</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"استخدمنا البروفايل في اجتماع مع مستثمرين، وكان له أثر واضح في بناء الثقة معهم."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">S</div>
+            <div><div class="testi-name">شريك مؤسس</div><div class="testi-role">قطاع الحلول التجارية</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">الأسئلة الشائعة</span>
+      <h2>كل ما تريد معرفته قبل البدء</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">هل تصممون بروفايل بالعربي والإنجليزي؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>نعم، نصمم بروفايلات ثنائية اللغة أو بلغة واحدة حسب احتياج شركتك وجمهورها المستهدف.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">هل يمكن تصميم بروفايل لعدة فروع أو أقسام؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>بالتأكيد، يمكننا تصميم بروفايل شامل لكل أقسام شركتك، أو بروفايلات منفصلة لكل فرع أو قسم على حدة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">هل تشمل الخدمة الهوية البصرية للشركة؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>إذا كانت شركتك تمتلك هوية بصرية جاهزة نعمل ضمن إطارها، وإذا لم تمتلك يمكننا اقتراح عناصر بصرية متكاملة كجزء من المشروع.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">كم عدد الصفحات المناسب لبروفايل الشركة؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>يختلف حسب حجم نشاطك ومحتواك، ونساعدك على تحديد العدد الأنسب بعد مراجعة بيانات شركتك.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">هل يمكن التعديل على المحتوى لاحقاً؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>نعم، نسلمك الملف بصيغة قابلة للتعديل بجانب النسخة النهائية، لتحديث المحتوى بسهولة كلما احتجت.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">ما هي صيغ التسليم المتاحة؟<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-a"><p>نسلمك الملف بصيغة PDF عالية الجودة، وPowerPoint قابل للتعديل، بالإضافة إلى صور جاهزة للمشاركة الرقمية.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section style="padding:0 0 100px;">
+  <div class="cta-section reveal-scale">
+    <h2>جاهز لبروفايل يليق بشركتك؟</h2>
+    <p>تواصل معنا الآن وابدأ رحلة بناء حضور احترافي لشركتك أمام عملائك وشركائك.</p>
+    <a class="btn btn-white btn-big" href="https://wa.me/201095676056?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84%20%D8%B4%D8%B1%D9%83%D8%AA%D9%8A" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.9 8.9 0 0012 4a8.9 8.9 0 00-7.7 13.4L3 21l3.7-1.2A8.9 8.9 0 0012 21a8.9 8.9 0 006.3-15.3zM12 19.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.9.9-2.6-.2-.3A7.3 7.3 0 1119.3 12 7.3 7.3 0 0112 19.3zm4-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.5.1-.5.7-.7.8-.3.2-.5.1a6 6 0 01-1.8-1.1 6.8 6.8 0 01-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4c.1-.1.1-.2.2-.4a.4.4 0 000-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.7 2.7 0 00-.8 2 4.7 4.7 0 001 2.4 10.6 10.6 0 004.1 3.6c.6.2 1 .4 1.4.5a2.3 2.3 0 001.5-.1 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c0-.1-.2-.2-.4-.3z"/></svg>
+      اطلب الآن عبر واتساب
+    </a>
+  </div>
+</section>
+
+<!-- ================= FORM ================= -->
+<section class="form-section" id="form">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">تواصل معنا</span>
+      <h2>أخبرنا عن شركتك ومشروعك</h2>
+      <p>املأ البيانات وسيتم تحويلك مباشرة إلى واتساب مع رسالتك جاهزة للإرسال.</p>
+    </div>
+
+    <form class="form-wrap reveal" id="leadForm" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="fcompany">اسم الشركة</label>
+          <input id="fcompany" name="fcompany" type="text" placeholder="اسم شركتك" required>
+        </div>
+        <div class="field">
+          <label for="fname">اسم المسؤول</label>
+          <input id="fname" name="fname" type="text" placeholder="اسمك الكامل" required>
+        </div>
+        <div class="field">
+          <label for="fphone">رقم الهاتف</label>
+          <input id="fphone" name="fphone" type="tel" placeholder="01xxxxxxxxx" required>
+        </div>
+        <div class="field">
+          <label for="femail">البريد الإلكتروني</label>
+          <input id="femail" name="femail" type="email" placeholder="example@email.com" required>
+        </div>
+        <div class="field full">
+          <label for="fsector">مجال نشاط الشركة</label>
+          <select id="fsector" name="fsector" required>
+            <option value="" disabled selected>اختر مجال نشاط شركتك</option>
+            <option value="مقاولات وإنشاءات">مقاولات وإنشاءات</option>
+            <option value="خدمات طبية">خدمات طبية</option>
+            <option value="حلول تجارية وتقنية">حلول تجارية وتقنية</option>
+            <option value="تجارة وتوريدات">تجارة وتوريدات</option>
+            <option value="استشارات">استشارات</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="fmessage">رسالتك</label>
+          <textarea id="fmessage" name="fmessage" placeholder="أخبرنا أكثر عن شركتك واحتياجاتك..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">
+        إرسال عبر واتساب
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.9 8.9 0 0012 4a8.9 8.9 0 00-7.7 13.4L3 21l3.7-1.2A8.9 8.9 0 0012 21a8.9 8.9 0 006.3-15.3zM12 19.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.9.9-2.6-.2-.3A7.3 7.3 0 1119.3 12 7.3 7.3 0 0112 19.3z"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">بروفايل برو للشركات</div>
+        <p>نساعد الشركات على بناء حضور احترافي مقنع من خلال بروفايلات مصممة بعناية تعكس هويتها وقيمها الحقيقية.</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#clients">أعمالنا مع الشركات</a></li>
+          <li><a href="#process">آلية العمل</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="https://wa.me/201095676056" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="#form">نموذج التواصل</a></li>
+          <li><a href="#" onclick="return false;">سياسة الخصوصية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 بروفايل برو للشركات. جميع الحقوق محفوظة.</span>
+      <span>صُمم بعناية لشركائنا من الشركات</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a class="wa-float" href="https://wa.me/201095676056" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.6 6.3A8.9 8.9 0 0012 4a8.9 8.9 0 00-7.7 13.4L3 21l3.7-1.2A8.9 8.9 0 0012 21a8.9 8.9 0 006.3-15.3zM12 19.3c-1.4 0-2.8-.4-4-1.1l-.3-.2-2.7.9.9-2.6-.2-.3A7.3 7.3 0 1119.3 12 7.3 7.3 0 0112 19.3zm4-5.5c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.5.1-.5.7-.7.8-.3.2-.5.1a6 6 0 01-1.8-1.1 6.8 6.8 0 01-1.2-1.6c-.1-.2 0-.4.1-.5l.4-.4c.1-.1.1-.2.2-.4a.4.4 0 000-.4c-.1-.1-.5-1.2-.7-1.7s-.4-.4-.5-.4h-.5a.9.9 0 00-.6.3 2.7 2.7 0 00-.8 2 4.7 4.7 0 001 2.4 10.6 10.6 0 004.1 3.6c.6.2 1 .4 1.4.5a2.3 2.3 0 001.5-.1 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c0-.1-.2-.2-.4-.3z"/></svg>
+</a>
+
+<script>
+(function(){
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  const heroVisual = document.getElementById('heroVisual');
+  const browserCard = document.getElementById('browserCard');
+  if (window.matchMedia('(min-width:961px)').matches){
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      browserCard.style.transform = `rotateX(${6 - y*10}deg) rotateY(${-10 + x*16}deg)`;
+    });
+    heroVisual.addEventListener('mouseleave', () => { browserCard.style.transform = 'rotateX(6deg) rotateY(-10deg)'; });
+  }
+
+  const counters = document.querySelectorAll('.stat-num');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1600;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => counterIO.observe(c));
+
+  const testiCards = document.querySelectorAll('.testi-card');
+  const testiDots = document.getElementById('testiDots');
+  let testiIndex = 0;
+  testiCards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', 'رأي عميل ' + (i+1));
+    dot.addEventListener('click', () => goToTesti(i));
+    testiDots.appendChild(dot);
+  });
+  function goToTesti(i){
+    testiCards[testiIndex].classList.remove('active');
+    testiDots.children[testiIndex].classList.remove('active');
+    testiIndex = i;
+    testiCards[testiIndex].classList.add('active');
+    testiDots.children[testiIndex].classList.add('active');
+  }
+  let testiTimer = setInterval(() => { goToTesti((testiIndex + 1) % testiCards.length); }, 4500);
+  document.getElementById('testiTrack').addEventListener('mouseenter', () => clearInterval(testiTimer));
+  document.getElementById('testiTrack').addEventListener('mouseleave', () => {
+    testiTimer = setInterval(() => { goToTesti((testiIndex + 1) % testiCards.length); }, 4500);
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ضع رابط الويب أب الخاص بك بعد نشر Apps Script هنا
+  const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzYyZbtFgZYxI6yj5ddqKXTgm1_7mzsSRQzpGPbnpzrCAaGNXnuml_65OJD3PYo4OSwqw/exec';
+
+  const leadForm = document.getElementById('leadForm');
+  leadForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const company = document.getElementById('fcompany').value.trim();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const sector = document.getElementById('fsector').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+
+    if (!company || !name || !phone || !email || !sector){
+      alert('من فضلك أكمل جميع الحقول المطلوبة.');
+      return;
+    }
+
+    // إرسال البيانات إلى Google Sheet عبر Apps Script
+    if (!SHEET_WEBAPP_URL || SHEET_WEBAPP_URL.indexOf('PASTE_YOUR') !== -1){
+      alert('لم يتم ربط الفورم بالشيت بعد. من فضلك ضع رابط Apps Script في متغير SHEET_WEBAPP_URL.');
+      return;
+    }
+
+    const submitBtn = leadForm.querySelector('.form-submit');
+    const originalBtnHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '.7';
+    submitBtn.innerHTML = 'جاري الإرسال...';
+
+    fetch(SHEET_WEBAPP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ company, name, phone, email, sector, message })
+    })
+    .then(() => {
+      showFormStatus('تم إرسال بياناتك بنجاح، سنتواصل معك في أقرب وقت. ✅', true);
+      leadForm.reset();
+    })
+    .catch((err) => {
+      console.error('تعذر إرسال البيانات إلى الشيت:', err);
+      showFormStatus('حدث خطأ أثناء الإرسال، من فضلك حاول مرة أخرى. ⚠️', false);
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitBtn.innerHTML = originalBtnHTML;
+    });
+  });
+
+  function showFormStatus(msg, success){
+    let statusEl = document.getElementById('formStatus');
+    if (!statusEl){
+      statusEl = document.createElement('p');
+      statusEl.id = 'formStatus';
+      statusEl.style.marginTop = '16px';
+      statusEl.style.textAlign = 'center';
+      statusEl.style.fontWeight = '700';
+      statusEl.style.fontSize = '14.5px';
+      leadForm.appendChild(statusEl);
+    }
+    statusEl.textContent = msg;
+    statusEl.style.color = success ? '#16A34A' : '#DC2626';
+  }
+})();
+</script>
+
+</body>
+</html>
